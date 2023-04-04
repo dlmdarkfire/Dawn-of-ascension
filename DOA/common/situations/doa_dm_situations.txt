@@ -1,0 +1,127 @@
+###fe spying
+
+situation_FE_spying = {
+    picture = GFX_evt_sapient_AI
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	
+	abort_trigger = {
+	    OR = {
+		    owner = { has_technology = tech_dark_matter_power_core } 
+			owner = { has_tech_option = tech_dark_matter_power_core }
+			}
+		}
+	on_progress_complete = {
+		hidden_effect = {
+			situation_event = { id = doa.20 }
+		}
+		destroy_situation = this
+	}
+	stages = {
+	    stage_1 = {
+		    icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 10
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 34
+			on_first_enter = {
+				situation_event = { id = doa.16 }
+			}
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 46
+			on_first_enter = {
+				situation_event = { id = doa.17 }
+			}
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 58
+			on_first_enter = {
+				situation_event = { id = doa.18 }
+			}
+		}
+		stage_5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_blue
+			end = 60
+			on_first_enter = {
+				situation_event = { id = doa.19 }
+			}
+		}
+	}
+	
+	monthly_progress = {
+	    base = 1
+	}
+}
+
+
+
+#### gaining dark matter
+situation_gaining_dark_matter = {
+    picture = GFX_evt_analyzing_artifacts
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	
+	abort_trigger = {
+	    OR = {
+		    owner = { has_technology = tech_dark_matter_power_core } 
+			owner = { has_tech_option = tech_dark_matter_power_core }
+			}
+		}
+	on_progress_complete = {
+		custom_tooltip = situation_gaining_dark_matter
+		hidden_effect = {
+			situation_event = { id = doa.24 }
+		}
+		destroy_situation = this
+	}
+	stages = {
+	    stage_1 = {
+		    icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 15
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 30
+			on_first_enter = {
+				situation_event = { id = doa.21 }
+			}
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 45
+			on_first_enter = {
+				situation_event = { id = doa.22 }
+			}
+		}
+	}
+	
+	approach = {
+	    name = situation_gaining_dark_matter_regular
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 100
+				sr_dark_matter = 3
+			}
+		}
+	}
+	
+	monthly_progress = {
+	    base = 1
+	}
+}

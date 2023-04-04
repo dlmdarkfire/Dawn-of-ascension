@@ -1,0 +1,1701 @@
+##########################
+### event technologies ###
+##########################
+
+
+tech_ascended_mega = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { field_manipulation }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_2
+	}
+	
+	modifier = {
+		megastructure_build_speed_mult = 0.5
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_espionage = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { computing }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_3
+	}
+	
+	modifier = {
+		intel_decryption_add = 5
+		intel_encryption_add = 5
+		ship_cloaking_strength_add = 1
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_shields = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_4
+	}
+	
+	modifier = {
+		ship_shield_mult = 0.25
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_arcology = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_7
+	}
+	
+	modifier = {
+		planet_decision_enact_speed_mult = 0.35
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_arcology_project = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_7
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_hive_world = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_7
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_machine_world = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_7
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_terraforming_projects = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_7
+	}
+	
+	modifier = {
+		terraform_speed_mult = 1
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+tech_ascended_buildings = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_5
+	}
+	
+	modifier = {
+		planet_districts_cost_mult = -0.2
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_ships = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_6
+	    NOT = {
+		  has_technology = tech_ascended_base_ships
+		  }
+	}
+	
+	modifier = {
+		ship_weapon_damage = 0.2
+		ship_hull_mult = 0.2
+		starbase_shipyard_build_speed_mult = -0.1
+		ships_upkeep_mult = 0.1
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_base_ships = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_6
+	      NOT = {
+		  has_technology = tech_ascended_ships
+		  }
+	}
+	
+	modifier = {
+		ship_speed_mult = 0.25
+		ships_upkeep_mult = -0.25
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_ascended_hulls = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_tech_6
+	}
+	
+	modifier = {
+		ship_hull_mult = 0.1
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+
+####################
+### ship unlocks ###
+####################
+
+tech_ascended_escort = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier5weight1
+	
+	potential = {
+        has_technology = tech_ascended_ships
+	}
+
+    prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_ASCENDED_ESCORT_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_ASCENDED_ESCORT_CONSTRUCTION_DESC"
+		}
+	}
+	
+	prerequisites = { "tech_ascended_ships" }
+	
+	ai_weight = {
+		factor = 100
+	}
+}	
+
+tech_ascended_battlecruiser = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier5weight1
+	
+	potential = {
+        has_technology = tech_ascended_ships
+	}
+
+    prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_ASCENDED_BATTLECRUISER_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_ASCENDED_BATTLECRUISER_CONSTRUCTION_DESC"
+		}
+	}
+	
+	prerequisites = { "tech_ascended_escort" }
+	
+	ai_weight = {
+		factor = 100
+	}
+}
+
+
+
+#####################
+### ship upgrades ###
+#####################
+
+
+################
+### corvette ###
+################
+
+
+tech_ascended_corvette_hull_3 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_corvette_hull_2" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+		custom_tooltip = tech_corvette_hull_effect
+		shipsize_corvette_hull_mult = 0.2
+		shipsize_offspring_corvette_hull_mult = 0.2
+		shipsize_frigate_hull_mult = 0.2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+
+#################
+### destroyer ###
+#################
+	
+	
+tech_ascended_destroyer_hull_3 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_destroyer_hull_2" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+		custom_tooltip = tech_destroyer_hull_effect
+		shipsize_destroyer_hull_mult = 0.2
+		shipsize_offspring_destroyer_hull_mult = 0.2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+##############
+### escort ###
+##############
+
+tech_ascended_escort_hull_1 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_ascended_escort" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+		custom_tooltip = tech_feescort_hull_effect
+		shipsize_feescort_hull_mult = 0.3
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+
+
+###############
+### cruiser ###
+###############
+
+
+tech_ascended_cruiser_hull_3 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_cruiser_hull_2" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+		custom_tooltip = tech_cruiser_hull_effect
+		shipsize_cruiser_hull_mult = 0.2
+		shipsize_offspring_cruiser_hull_mult = 0.2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+
+######################
+### battle cruiser ###
+######################
+
+tech_ascended_battlecruiser_hull_1 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_ascended_battlecruiser" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+		custom_tooltip = tech_febattlecruiser_hull_effect
+		shipsize_febattlecruiser_hull_mult = 0.3
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+
+##################
+### battleship ###
+##################
+
+
+tech_ascended_battleship_hull_3 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_battleship_hull_2" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+		custom_tooltip = tech_battleship_hull_effect
+		shipsize_battleship_hull_mult = 0.2
+		shipsize_offspring_battleship_hull_mult = 0.2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+#############
+### titan ###
+#############
+
+tech_ascended_titan_hull_3 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_titan_hull_2" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+		shipsize_titan_hull_mult = 0.2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+##################
+### juggernaut ###
+##################
+
+tech_ascended_juggernaut_hull_1 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	weight = @tier4weight1
+	prerequisites = { "tech_juggernaut" "tech_ascended_hulls" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_hulls
+	}
+	
+	modifier = {
+	    custom_tooltip = tech_juggernaut_hull_effect
+		shipsize_juggernaut_hull_mult = 0.3
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+
+
+
+########################
+### Ship build speed ###
+########################
+
+tech_escort_build_speed = {
+	 area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	prerequisites = { "tech_ascended_escort" }
+	weight = @tier4weight1
+
+	modifier = {
+		custom_tooltip = tech_escort_build_speed_effect
+		ship_feescort_cost_mult = -0.1
+		shipsize_feescort_build_speed_mult = 0.25
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_valid_civic = civic_eager_explorers
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_battlecruiser_build_speed = {
+	 area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { voidcraft }
+	prerequisites = { "tech_ascended_battlecruiser" }
+	weight = @tier4weight1
+
+	modifier = {
+		custom_tooltip = tech_battlecruiser_build_speed_effect
+		ship_febattlecruiser_cost_mult = -0.1
+		shipsize_febattlecruiser_build_speed_mult = 0.25
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_valid_civic = civic_eager_explorers
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+########################
+### building unlocks ###
+########################
+
+
+##########################
+### automation uplinks ###
+##########################
+
+tech_automation_uplink_1 = {
+    area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_automation_uplink_2 = {
+    area = physics
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight2
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_automation_uplink_3 = {
+    area = physics
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight3
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+
+
+######################
+### consumer goods ###
+######################
+
+
+tech_affluence_center_1 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+	    }
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+tech_affluence_center_2 = {
+    area = engineering
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { materials }
+	weight = @tier5weight2
+	prerequisites = { "tech_automation_uplink_2" "tech_affluence_center_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+	    }
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+tech_affluence_center_3 = {
+    area = engineering
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { materials }
+	weight = @tier5weight3
+	prerequisites = { "tech_automation_uplink_3" "tech_affluence_center_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+	    }
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+
+######################
+### food buildings ###
+######################
+
+tech_nourishment_center_1 = {
+    area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+tech_nourishment_center_2 = {
+    area = society
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { biology }
+	weight = @tier5weight2
+	prerequisites = { "tech_automation_uplink_2" "tech_nourishment_center_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+tech_nourishment_center_3 = {
+    area = society
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { biology }
+	weight = @tier5weight3
+	prerequisites = { "tech_automation_uplink_3" "tech_nourishment_center_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+###############################
+### dimensional fabricators ###
+###############################
+
+tech_dimensional_fabricator_1 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+tech_dimensional_fabricator_2 = {
+    area = engineering
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { industry }
+	weight = @tier5weight2
+	prerequisites = { "tech_automation_uplink_2" "tech_dimensional_fabricator_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+tech_dimensional_fabricator_3 = {
+    area = engineering
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { industry }
+	weight = @tier5weight3
+	prerequisites = { "tech_automation_uplink_3" "tech_dimensional_fabricator_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+
+########################
+### energy buildings ###
+########################
+
+tech_class_4_singularity_1 = {
+    area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_class_4_singularity_2 = {
+    area = physics
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight2
+	prerequisites = { "tech_automation_uplink_2" "tech_class_4_singularity_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_class_4_singularity_3 = {
+    area = physics
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight3
+	prerequisites = { "tech_automation_uplink_3" "tech_class_4_singularity_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+
+#######################
+### alloy buildings ###
+#######################
+
+tech_nano_forge_1 = {
+    area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+tech_nano_forge_2 = {
+    area = engineering
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { materials }
+	weight = @tier5weight2
+	prerequisites = { "tech_automation_uplink_2" "tech_nano_forge_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+tech_nano_forge_3 = {
+    area = engineering
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { materials }
+	weight = @tier5weight3
+	prerequisites = { "tech_automation_uplink_3" "tech_nano_forge_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+#########################
+### science buildings ###
+#########################
+
+tech_master_archive_1 = {
+    area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { computing }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+tech_master_archive_2 = {
+    area = physics
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { computing }
+	weight = @tier5weight2
+	prerequisites = { "tech_master_archive_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+tech_master_archive_3 = {
+    area = physics
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { computing }
+	weight = @tier5weight3
+	prerequisites = { "tech_master_archive_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+##########################
+### military buildings ###
+##########################
+
+tech_eternal_bastion_1 = {
+    area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { military_theory }
+	weight = @tier5weight3
+	prerequisites = { "tech_ascended_buildings" "tech_global_defense_grid" }
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+}
+
+##########################
+### dark matter pylons ###
+##########################
+
+tech_dark_matter_pylon_1 = {
+    area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight1
+	prerequisites = { "tech_ascended_buildings" "tech_automation_uplink_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_dark_matter_pylon_2 = {
+    area = physics
+	cost = @ascendedtechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight2
+	prerequisites = { "tech_automation_uplink_2" "tech_dark_matter_pylon_1" } 
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_dark_matter_pylon_3 = {
+    area = physics
+	cost = @ascended2techcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	weight = @tier5weight3
+	prerequisites = { "tech_automation_uplink_3" "tech_dark_matter_pylon_2" } 
+	is_rare = yes
+	
+	potential = {
+        has_technology = tech_ascended_buildings
+	}	
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}

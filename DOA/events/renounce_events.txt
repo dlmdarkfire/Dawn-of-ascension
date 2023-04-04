@@ -1,0 +1,230 @@
+namespace = renounce_event
+
+
+country_event = {
+	id = renounce_event.1
+	title = renounce_event.1.name
+	desc = renounce_event.1.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			if = {
+			    start_situation = {
+					type = situation_renounce_ascendancy
+					target = this
+				}
+			}
+		}
+	}
+
+	option = {
+		name = renounce_event.1.a
+		remove_country_flag = ascended_empire
+		set_timed_country_flag = { flag = new_isolationist_empire days = 10800 }
+	}
+}
+
+country_event = {
+	id = renounce_event.2
+	title = renounce_event.2.name
+	desc = renounce_event.2.desc
+	picture = GFX_evt_alien_segregation
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+
+	option = {
+		name = renounce_event.2.a	
+	}
+}
+
+country_event = {
+	id = renounce_event.3
+	title = renounce_event.3.name
+	desc = renounce_event.3.desc
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+
+	option = {
+		name = renounce_event.3.a	
+	}
+}
+
+country_event = {
+	id = renounce_event.4
+	title = renounce_event.4.name
+	desc = renounce_event.4.desc
+	picture = GFX_evt_grand_speech
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+
+	option = {
+		name = renounce_event.4.a
+        owner = {
+		set_country_flag = ascended_empire_isolationist
+		force_remove_civic = civic_ascended_empire
+		
+		
+		
+	    force_add_civic = civic_isolationist_empire
+		force_add_civic = civic_isolationist_ideals
+		force_add_civic = civic_secured_borders
+	    set_government_cooldown = no
+		}
+         hidden_effect = {
+		 owner = {
+		 force_remove_civic = civic_ascended_navy
+		force_remove_civic = civic_defenders_of_eden
+		force_remove_civic = civic_immigration_Haven
+		force_remove_civic = civic_national_purity
+		force_remove_civic = civic_spirit_of_liberty
+		force_remove_civic = civic_divine_leadership
+		force_remove_civic = civic_technological_mastery
+		force_remove_civic = civic_chosen_of_the_shroud
+		force_remove_civic = civic_Architects_of_Gaia
+		force_remove_civic = civic_utopian_ideals
+		force_remove_civic = civic_mega_architects
+		force_remove_civic = civic_galactic_superpower
+		force_remove_civic = civic_industrial_espionage
+		force_remove_civic = civic_peaceful_haven
+		force_remove_civic = civic_galactic_diplomats
+		force_remove_civic = civic_covert_state
+		force_remove_civic = civic_beacon_of_prosperity
+		force_remove_civic = civic_society_of_equals
+		force_remove_civic = civic_slave_masters
+		force_remove_civic = civic_fanatical_mechanists
+		force_remove_civic = civic_shroud_scholars
+		}
+		 every_country = {					# Notify Players
+				limit = {
+					NOT = { is_same_value = root }
+					is_ai = no			
+				}
+				country_event = { id = renounce_event.9 }
+			}
+		}		
+	}
+}
+
+
+situation_event = {
+    id = renounce_event.5
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = renounce_event.2
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = renounce_event.6
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = renounce_event.3
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = renounce_event.7
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = renounce_event.4
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+country_event = {
+	id = renounce_event.8
+	title = renounce_event.8.name
+	desc = renounce_event.8.desc
+	picture = GFX_evt_fallen_empire
+	show_sound = event_celebration
+	location = from
+	is_triggered_only = yes
+	
+
+	option = {
+		name = renounce_event.8.a
+        owner = {
+		remove_country_flag = ascended_empire_isolationist
+		set_country_flag = ascended_empire
+		force_add_civic = civic_ascended_empire
+	    force_remove_civic = civic_isolationist_empire
+		force_remove_civic = civic_isolationist_ideals
+		force_remove_civic = civic_secured_borders
+	    set_government_cooldown = no
+		set_timed_country_flag = { flag = new_ascended_empire days = 7200 }
+		hidden_effect = {
+		 every_country = {					# Notify Players
+				limit = {
+					NOT = { is_same_value = root }
+					is_ai = no			
+				}
+				country_event = { id = renounce_event.10 }
+			}
+		}
+		}		
+	}
+}
+
+# new isolationist empire notification for all players
+country_event = {
+	id = renounce_event.9
+	title = renounce_event.9.name
+	desc = renounce_event.9.desc
+	picture = GFX_evt_grand_speech
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = renounce_event.9.a			
+	}
+}
+
+# new ascended empire notification for all players
+country_event = {
+	id = renounce_event.10
+	title = renounce_event.10.name
+	desc = renounce_event.10.desc
+	picture = GFX_evt_fallen_empire
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = renounce_event.10.a			
+	}
+}

@@ -1,0 +1,352 @@
+@destroyer_scale = 7.5
+@corvette_scale = 6.5
+@cruiser_scale = 10.5
+@battleship_scale = 16.0
+@missile_scale = 1.0
+@transport_scale = 9.0
+@colonizer_scale = 13.0
+@science_scale = 1.0
+@constructor_scale = 12.0
+@military_station_large = 15.0
+@orbital_station = 17
+@research_station = 13
+@mining_station = 13
+@terraforming_station = 13
+
+@small_trail_W = 10
+@small_trail_L = 60
+@medium_trail_W = 25
+@medium_trail_L = 150
+@large_trail_W = 50
+@large_trail_L =  300
+
+
+###################################################################################
+###																				###
+###									WEAPONS										###
+###																				###
+###################################################################################
+
+entity = {
+	name = "fe_national_missle_entity"
+	pdxmesh = "fe_national_missile_mesh"
+
+	default_state = idle
+	state = { name = "idle" }
+	state = { name = "stop" looping = no }
+
+
+	scale = 1.25
+}
+
+entity = {
+	name = "fe_national_turret_energy_torpedo_entity"
+	pdxmesh = "fe_national_turret_projectile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_turret_torpedo_entity"
+	pdxmesh = "fe_national_turret_missile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_turret_missile_large_entity"
+	pdxmesh = "fe_national_turret_missile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_turret_missile_medium_entity"
+	pdxmesh = "fe_national_turret_missile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_turret_missile_small_entity"
+	pdxmesh = "fe_national_turret_missile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "fe_national_large_kinetic_gun_entity"
+	pdxmesh = "fe_national_turret_projectile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_medium_kinetic_gun_entity"
+	pdxmesh = "fe_national_turret_projectile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_small_kinetic_gun_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+
+
+entity = {
+	name = "fe_national_turret_point_defence_entity"
+	pdxmesh = "fe_national_turret_point_defence_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+
+
+
+
+entity = {
+	name = "fe_national_large_laser_gun_entity"
+	pdxmesh = "fe_national_turret_projectile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_medium_laser_gun_entity"
+	pdxmesh = "fe_national_turret_projectile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_small_laser_gun_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "fe_national_turret_xl_entity"
+	pdxmesh = "fe_national_turret_xl_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1
+
+	game_data = {
+		emissive_recolor_crunch = 2.0
+	}
+}
+
+
+
+
+
+# ##################
+# Critter Weapons
+# ##################
+
+
+# Amoeba Weapons
+
+entity = {
+	name = "fe_national_small_space_amoeba_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_medium_space_amoeba_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_large_space_amoeba_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Space Cloud Weapons
+
+entity = {
+	name = "fe_national_small_space_cloud_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_large_space_cloud_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Crystal Weapons
+
+entity = {
+	name = "fe_national_small_crystal_ship_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_medium_crystal_ship_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_large_crystal_ship_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Mining Drone Weapons
+
+entity = {
+	name = "fe_national_small_mining_drone_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_medium_mining_drone_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+# Space Whale Weapons
+
+entity = {
+	name = "fe_national_small_space_whale_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_medium_space_whale_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_large_space_whale_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_large_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 1.0
+}
+
+# Swarm Weapons
+
+entity = {
+	name = "fe_national_small_scourge_projectile_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_small_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}
+
+entity = {
+	name = "fe_national_medium_scourge_projectile_weapon_entity"
+	pdxmesh = "fe_national_turret_projectile_medium_mesh"
+
+	state = { name = "idle"	}
+	state = { name = "attack" looping = no next_state = "idle"
+	}
+	scale = 0.85
+}

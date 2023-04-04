@@ -1,0 +1,6 @@
+doa_automated_industries_count = {
+    icon = mod_upkeep_add
+	max_decimals = 2
+	neutral = yes
+	category = country
+}	

@@ -1,0 +1,54 @@
+artifact_dark_matter_research = {
+    resources = {
+	    category = artifact_actions
+		cost = {
+		     minor_artifacts = 500
+		}
+	}
+	
+	ai_weight = {
+		weight = 250
+	}
+
+    potential = {
+	    NOT = { has_tech_option = tech_dark_matter_power_core }		
+        NOT = { has_technology = tech_dark_matter_power_core }
+		NOT = { has_country_flag = dark_matter_artifact_attempted }
+		has_country_flag = dark_matter_artifact
+	}
+
+    allow = {
+        custom_tooltip = {
+           fail_text = "requires_arcane_deciphering_no_cooldown"
+           NOT = { has_modifier = arcane_deciphering_cooldown }
+		}
+	}
+
+    effect = {
+        custom_tooltip = artifact_dark_matter_research_effect
+        hidden_effect = {
+           add_modifier = {
+               modifier = "arcane_deciphering_cooldown"
+			   days = 720
+			}
+            random_list = {
+			    20 = {
+                    owner = {	
+					      country_event { id = doa.14 }
+						}
+					}
+				45 = {
+				     owner = {
+					      country_event { id = ancrel.10000 }
+						}
+					}
+				35 = {
+				     owner = {
+					      country_event { id = doa.15 }
+						  set_country_flag = dark_matter_artifact_attempted
+					}
+				}
+			}
+		}
+	}
+}	

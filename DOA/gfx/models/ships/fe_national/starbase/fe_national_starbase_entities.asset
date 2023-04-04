@@ -1,0 +1,161 @@
+entity = {	
+	name = "fe_national_starbase_outpost_phase_01_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "slot1" = "fe_national_starbase_outpost_section_entity" }
+
+	cull_radius = 500
+}
+
+
+entity = {	
+	name = "fe_national_starbase_starport_phase_02_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "slot1" = "fe_national_starbase_starport_section_entity" }
+
+	cull_radius = 500
+}
+
+
+entity = {	
+	name = "fe_national_starbase_starhold_phase_03_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "slot1" = "fe_national_starbase_starhold_section_entity" }
+
+	cull_radius = 500
+}
+
+
+entity = {	
+	name = "fe_national_starbase_starfortress_phase_04_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "slot1" = "fe_national_starbase_starfortress_section_entity" }
+
+	cull_radius = 500
+}
+
+
+
+entity = {	
+	name = "fe_national_starbase_citadel_phase_05_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "slot1" = "fe_national_starbase_citadel_section_entity" }
+
+	cull_radius = 500
+		
+}
+
+entity = {	
+	name = "fe_national_starbases_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	locator = { name = "slot2"				position = { 50	0  0 } }
+	locator = { name = "slot3"				position = { 100	0  0 } }
+	locator = { name = "slot4"				position = { 175	0  0 } }
+	locator = { name = "slot5"				position = { 250	0  0 } }
+	
+	
+
+	attach = { "slot1" = "fe_national_starbase_outpost_phase_01_entity" }
+	attach = { "slot2" = "fe_national_starbase_starport_phase_02_entity" }
+	attach = { "slot3" = "fe_national_starbase_starhold_phase_03_entity" }
+	attach = { "slot4" = "fe_national_starbase_starfortress_phase_04_entity" }
+	attach = { "slot5" = "fe_national_starbase_citadel_phase_05_entity" }
+
+	cull_radius = 500
+		
+}
+
+entity = {
+	name = "fe_national_starbase_outpost_construction_entity"
+	pdxmesh = "fe_national_outpost_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+
+	scale = 1.0
+}
+
+entity = {
+	name = "fe_national_starbase_starport_construction_entity"
+	pdxmesh = "fe_national_starport_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+
+	scale = 1.0
+}
+
+entity = {
+	name = "fe_national_starbase_starhold_construction_entity"
+	pdxmesh = "fe_national_starhold_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+
+	scale = 1.0
+}
+
+entity = {
+	name = "fe_national_starbase_starfortress_construction_entity"
+	pdxmesh = "fe_national_starhold_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+
+	scale = 1.0
+}
+
+entity = {
+	name = "fe_national_starbase_citadel_construction_entity"
+	pdxmesh = "fe_national_citadel_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+
+	scale = 1.0
+}
+
+entity = {
+	name = "fe_national_starbase_turret_section_entity"
+	pdxmesh = "locator_mesh"
+	scale = 1.0
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+}
+
+
+

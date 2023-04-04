@@ -1,0 +1,3 @@
+# ascended empire tech
+@ascendedtechcost = 60000
+@ascended2techcost = 70000

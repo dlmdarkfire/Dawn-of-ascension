@@ -1,0 +1,58 @@
+objectTypes = {
+
+#######  Turrets  #######
+
+	pdxmesh = {
+		name = "fe_national_missile_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "fe_national_turret_projectile_large_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "fe_national_turret_projectile_medium_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "fe_national_turret_projectile_small_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "fe_national_turret_missile_large_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "fe_national_turret_missile_medium_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "fe_national_turret_missile_small_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "fe_national_turret_point_defence_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "fe_national_turret_xl_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}
+}

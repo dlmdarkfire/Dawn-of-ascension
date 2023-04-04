@@ -1,0 +1,209 @@
+decision_ascended_arcology_project = {
+	owned_planets_only = yes
+	icon = decision_arcology_project
+
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			minerals = 20000
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_arcology_project"
+	}
+
+	potential = {
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+		}
+		is_artificial = no
+		exists = owner
+		owner = {
+		    NOT = { 
+			has_ascension_perk = ap_arcology_project
+			}
+		}	
+	}
+
+	allow = {
+		if = {
+			limit = { owner = { is_ai = no } }
+			custom_tooltip = {
+				fail_text = decision_arcology_project_requirements
+				free_district_slots < 1
+				num_districts = { type = district_farming value < 1 }
+				num_districts = { type = district_mining value < 1 }
+				num_districts = { type = district_generator value < 1 }
+				num_districts = { type = district_farming_uncapped value < 1 }
+				num_districts = { type = district_mining_uncapped value < 1 }
+				num_districts = { type = district_generator_uncapped value < 1 }
+			}
+		}
+		num_uncleared_blockers < 1
+	}
+
+	effect = {
+		# Make city-planet
+		custom_tooltip = decision_arcology_project_effects
+		hidden_effect = {
+			clear_deposits = yes
+			set_industrial_focus_flags = yes
+			change_pc = pc_city
+			relic_world_conversion_effect = {
+				DISTRICT = district_arcology_housing
+				VARIABLE = num_housing_districts
+			}
+			relic_world_conversion_effect = {
+				DISTRICT = district_arcology_arms_industry
+				VARIABLE = num_industrial_districts
+			}
+			set_ecu_industrial_districts_effect = yes
+			set_planet_entity = {
+				entity = "city_planet_entity"
+				graphical_culture = owner
+			}
+			owner = {
+				country_event = { id = distar.201 } # port for living planet distar.197, triggers in event
+			}
+			planet_event = { id = mega.200 }
+			if = {
+				limit = {
+					OR = {
+						is_active_resolution = "resolution_ecology_environmental_control_board"
+						is_active_resolution = "resolution_ecology_paradise_initiative"
+					}
+				}
+				owner = {
+					set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 100
+			exists = owner
+			OR = {
+				num_pops >= 70
+				is_capital = yes
+			}
+		}
+	}
+}
+
+
+decision_ascended_hive_world_project = {
+	owned_planets_only = yes
+	icon = decision_hive_world_project
+
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			energy = 10000
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_hive_world"
+	}
+
+	potential = {
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+			is_planet_class = pc_hive
+			has_modifier = pm_wenkwort_custodian
+		}
+		is_artificial = no
+		exists = owner
+		owner = {
+		    NOT = { 
+			has_ascension_perk = ap_arcology_project
+			}
+		}	
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = {
+			change_pc = pc_hive
+		}
+	}	
+
+	ai_weight = {
+		weight = 30
+		modifier = {
+			factor = 200
+			exists = owner
+			OR = {
+				num_pops >= 50
+			}
+		}
+	}
+}
+
+decision_ascended_machine_world_project = {
+	owned_planets_only = yes
+	icon = decision_machine_world_project
+
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			energy = 10000
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_machine_world"
+	}
+
+	potential = {
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+			is_planet_class = pc_machine
+			has_modifier = pm_wenkwort_custodian
+		}
+		is_artificial = no
+		exists = owner
+		owner = {
+		    NOT = { 
+			has_ascension_perk = ap_arcology_project
+			}
+		}	
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = {
+			change_pc = pc_machine
+		}
+	}	
+
+	ai_weight = {
+		weight = 30
+		modifier = {
+			factor = 200
+			exists = owner
+			OR = {
+				num_pops >= 50
+			}
+		}
+	}
+}

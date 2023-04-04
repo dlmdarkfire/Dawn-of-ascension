@@ -1,0 +1,61 @@
+objectTypes = {	
+	
+	pdxmesh = {
+		name = "fe_national_science_mesh"
+		file = "gfx/models/ships/fe_national/civilian_ships/fe_national_science.mesh"
+		
+				animation = { id = "idle"			type = "eventship_08_idle_animation" }
+				animation = { id = "death"			type = "eventship_08_death3_animation" }				
+				animation = { id = "moving"			type = "eventship_08_idle_animation" }				
+		
+		scale = 1.0
+
+		meshsettings = {
+			name = "polySurface19Shape"
+			index = 0
+			texture_diffuse = "fventship_08_diffuse.dds"
+			texture_normal = "eventship_08_normal.dds"
+			texture_specular = "eventship_08_specular.dds"
+			shader = "PdxMeshShip"
+			}
+	}
+	
+	pdxmesh = {
+		name = "fe_national_colony_ship_mesh"
+		file = "gfx/models/ships/fe_national/civilian_ships/fe_national_colony_ship.mesh"
+		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "fe_national_civilian_mesh"
+		file = "gfx/models/ships/fallen_empire_01/fallen_empire_civilian.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "finished_MeshShape"
+			index = 0
+			texture_diffuse = "ascendant_01_civilian_diffuse.dds"
+			texture_normal = "ascendant_empire_civilian_normal.dds"
+			texture_specular = "ascendant_empire_civilian_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	pdxmesh = {
+		name = "fe_national_transport_mesh"
+		file = "gfx/models/ships/fallen_empire_01/fallen_empire_transport.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pCube4Shape"
+			index = 0
+			texture_diffuse = "ascendant_01_civilian_diffuse.dds"
+			texture_normal = "ascendant_empire_civilian_normal.dds"
+			texture_specular = "ascendant_empire_civilian_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	
+}
+
+

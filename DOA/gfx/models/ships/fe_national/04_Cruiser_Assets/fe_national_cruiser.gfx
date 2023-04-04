@@ -1,0 +1,49 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_cruiser_bow_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_bow.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_cruiser_mid_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_mid.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_cruiser_stern_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_stern.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_cruiser_bow_vanilla_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_bow_vanilla.mesh"
+		scale = 1.0
+	}
+	pdxmesh = {
+		name = "fe_national_cruiser_bow_missile_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_G1S2_bow.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_cruiser_mid_vanilla_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_mid_vanilla.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_cruiser_stern_vanilla_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_stern_vanilla.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_cruiser_mid_test_mesh"
+		file = "gfx/models/ships/fe_national/04_Cruiser_Assets/fe_national_cruiser_test.mesh"
+		scale = 1.0
+	}
+}

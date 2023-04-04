@@ -1,0 +1,8 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_corvette_mesh"
+		file = "gfx/models/ships/fe_national/01_corvette_assets/fe_national_corvette.mesh"
+		scale = 1.0
+	}
+}

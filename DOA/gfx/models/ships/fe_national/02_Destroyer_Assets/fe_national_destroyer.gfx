@@ -1,0 +1,48 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_destroyer_L1_bow_mesh"
+		file = "gfx/models/ships/fe_national/02_destroyer_assets/fe_national_destroyer_L1_bow.mesh"
+		scale = 1.0
+	}
+	pdxmesh = {
+		name = "fe_national_destroyer_M1S2_bow_mesh"
+		file = "gfx/models/ships/fe_national/02_destroyer_assets/fe_national_destroyer_M1S2_bow.mesh"
+		scale = 1.0
+	}
+	pdxmesh = {
+		name = "fe_national_destroyer_S3_bow_mesh"
+		file = "gfx/models/ships/fe_national/02_destroyer_assets/fe_national_destroyer_S3_bow.mesh"
+		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "fe_national_destroyer_M1S4_bow_mesh"
+		file = "gfx/models/ships/fe_national/02_destroyer_assets/fe_national_destroyer_bow.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_destroyer_stern_mesh"
+		file = "gfx/models/ships/fe_national/02_destroyer_assets/fe_national_destroyer_stern.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_destroyer_stern_vanilla_mesh"
+		file = "gfx/models/ships/fe_national/02_destroyer_assets/fe_national_destroyer_stern_vanilla.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_escort_mesh"
+		file = "gfx/models/ships/fe_national/02_destroyer_assets/fe_national_escort.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_escort_weapons_mesh"
+		file = "gfx/models/ships/fe_national/fe_national_invis.mesh"
+		scale = 1.0
+	}
+}

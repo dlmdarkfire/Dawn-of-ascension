@@ -1,0 +1,56 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_citadel_frame_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_citadel_frame.mesh"
+		scale = 1.0
+
+	}
+
+
+	pdxmesh = {
+		name = "fe_national_outpost_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_outpost.mesh"
+		scale = 1.0
+
+			
+	}
+	
+	pdxmesh = {
+		name = "fe_national_starport_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_starport.mesh"
+		scale = 1.0
+
+		
+	}	
+
+	pdxmesh = {
+		name = "fe_national_starhold_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_starhold.mesh"
+		scale = 1.0
+
+		
+	}
+
+	pdxmesh = {
+		name = "fe_national_starfort_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_starfort.mesh"
+		scale = 1.0
+
+		
+	}
+
+	pdxmesh = {
+		name = "fe_national_citadel_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_citadel.mesh"
+		scale = 1.0
+
+		
+	}
+
+	pdxmesh = {
+		name = "fe_national_ion_cannon_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_ion_cannon.mesh"
+		scale = 1.0
+	}
+}

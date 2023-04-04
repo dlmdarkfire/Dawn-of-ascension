@@ -1,0 +1,22 @@
+objectTypes = {
+	
+	
+	pdxmesh = {
+		name = "fe_national_01_colossus_mesh"
+		file = "gfx/models/ships/fe_national/10_colossus/fe_national_01_colossus.mesh"
+		
+		animation = { id = "idle"			type = "fallen_empire_01_colossus_idle_animation" }
+		animation = { id = "open"			type = "fallen_empire_01_colossus_open_animation" }
+		animation = { id = "opening"		type = "fallen_empire_01_colossus_opening_animation" }
+		animation = { id = "closing"		type = "fallen_empire_01_colossus_closing_animation" }
+		animation = { id = "opened_death"	type = "fallen_empire_01_colossus_opened_death_animation" }
+		
+	meshsettings = {
+			index = 0
+			texture_diffuse = "ascendant_01_colossus_diffuse.dds"
+			texture_normal = "ascendant_01_colossus_normal.dds"
+			texture_specular = "ascendant_01_colossus_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

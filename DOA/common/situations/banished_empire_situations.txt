@@ -1,0 +1,27 @@
+##### banished empire
+
+
+situation_banished_empire = {
+    picture = GFX_evt_civil_action
+    complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	on_progress_complete = {
+		hidden_effect = {
+			situation_event = { id = banished_empire.4 }
+		}
+		destroy_situation = this
+	}
+	stages = {
+	    stage_1 = {
+		    icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 360
+			custom_tooltip = stage_banishment_effects
+		}
+	}
+	
+	
+	monthly_progress = {
+	    base = 1
+	}
+}	

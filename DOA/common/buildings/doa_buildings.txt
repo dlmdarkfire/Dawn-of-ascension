@@ -1,0 +1,1382 @@
+#######################
+### Uplink stations ###
+#######################
+
+
+doa_automation_uplink_1 = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	can_be_disabled = no
+	category = resource
+	base_cap_amount = 1
+	
+	prerequisites = {
+	"tech_automation_uplink_1"
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}	
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	triggered_country_modifier = {
+	        potential = {
+			exists = owner
+			}
+	doa_automated_industries_count = 4
+	}	
+	
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		
+		upkeep = {
+			energy = 100
+			sr_dark_matter = 2
+		}
+	}
+	
+	upgrades = {
+		doa_automation_uplink_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	
+}
+
+
+doa_automation_uplink_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_demolish = yes
+	can_be_disabled = no
+	category = resource
+	
+	prerequisites = {
+	"tech_automation_uplink_2"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+	has_major_upgraded_capital = yes
+	}
+	
+	
+	triggered_country_modifier = {
+	        potential = {
+			exists = owner
+			}
+	        doa_automated_industries_count = 6
+	}	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		
+		upkeep = {
+			energy = 150
+			sr_dark_matter = 3
+		}
+	}
+	
+	upgrades = {
+	doa_automation_uplink_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	
+}
+
+doa_automation_uplink_3 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = yes
+	can_be_disabled = no
+	category = resource
+	
+	prerequisites = {
+	"tech_automation_uplink_3"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+	has_fully_upgraded_capital = yes
+	}
+	
+	triggered_country_modifier = {
+	        potential = {
+			exists = owner
+			}
+	        doa_automated_industries_count = 8
+	}
+		
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+		}
+		
+		upkeep = {
+			energy = 200
+			sr_dark_matter = 4
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+#########################
+### construction site ###
+#########################
+
+
+doa_construction_site = {
+	base_buildtime = 90
+	can_build = yes
+	can_demolish = yes
+	category = resource
+	
+	empire_limit = {
+        base = 0
+           modifier = {
+           exists = owner
+           add = owner.modifier:doa_automated_industries_count
+           }
+    }
+	
+	prerequisites = {
+	"tech_automation_uplink_1"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}R
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_1
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+	
+	upgrades = {
+	doa_dark_matter_pylon_1
+	doa_dimensional_fabricator_1
+	doa_affluence_center_1
+	doa_nano_forge_1
+	doa_nourishment_center_1
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	
+	triggered_desc = {
+		text = doa_construction_site_effect_desc
+	}
+}
+
+
+
+##########################
+### dark matter pylons ###
+##########################
+
+
+doa_dark_matter_pylon_1 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_dark_matter_pylon_1"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_1
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			sr_dark_matter = 4
+		}
+		upkeep = {
+			energy = 50
+		}
+	}
+	
+	upgrades = {
+	    doa_dark_matter_pylon_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_dark_matter_pylon_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_dark_matter_pylon_2"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			sr_dark_matter = 8
+		}
+		upkeep = {
+			energy = 75
+		}
+	}
+	
+	upgrades = {
+	    doa_dark_matter_pylon_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_dark_matter_pylon_3 = {
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_doa_dark_matter_pylon_3"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	allow = {
+		has_building = doa_automation_uplink_3
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		produces = {
+			sr_dark_matter = 16
+		}
+		upkeep = {
+			energy = 100
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+
+
+##############################
+### dimensional fabricator ###
+##############################
+
+doa_dimensional_fabricator_1 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_dimensional_fabricator_1"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_1
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			rare_crystals = 2
+			exotic_gases = 2
+			volatile_motes = 2
+		}
+		upkeep = {
+			energy = 50
+			sr_dark_matter = 1
+		}
+	}
+	
+	upgrades = {
+	    doa_dimensional_fabricator_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_dimensional_fabricator_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_dimensional_fabricator_2"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+			rare_crystals = 4
+			exotic_gases = 4
+			volatile_motes = 4
+		}
+		upkeep = {
+			energy = 75
+			sr_dark_matter = 2
+		}
+	}
+	
+	upgrades = {
+	    doa_dimensional_fabricator_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_dimensional_fabricator_3 = {
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_dimensional_fabricator_3"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	allow = {
+		has_building = doa_automation_uplink_3
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		produces = {
+			rare_crystals = 8
+			exotic_gases = 8
+			volatile_motes = 8
+		}
+		upkeep = {
+			energy = 100
+			sr_dark_matter = 3
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+
+######################
+### consumer goods ###
+######################
+
+doa_affluence_center_1 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_demolish = yes
+	category = manufacturing
+	
+	prerequisites = {
+	"tech_affluence_center_1"
+	}
+	
+	potential = {
+	owner = {
+			country_uses_consumer_goods = yes
+	}
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_1
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			consumer_goods = 50
+		}
+		upkeep = {
+			minerals = 25
+			energy = 50
+			sr_dark_matter = 1
+		}
+	}
+	
+	upgrades = {
+	    doa_affluence_center_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_affluence_center_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = yes
+	category = manufacturing
+	
+	prerequisites = {
+	"tech_affluence_center_2"
+	}
+	
+	potential = {
+	owner = {
+			country_uses_consumer_goods = yes
+	}
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+			consumer_goods = 100
+		}
+		upkeep = {
+			minerals = 37
+			energy = 75
+			sr_dark_matter = 2
+		}
+	}
+	
+	upgrades = {
+	    doa_affluence_center_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_affluence_center_3 = {
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = yes
+	category = manufacturing
+	
+	prerequisites = {
+	"tech_affluence_center_3"
+	}
+	
+	potential = {
+	owner = {
+			country_uses_consumer_goods = yes
+	}
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_building = doa_automation_uplink_3
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		produces = {
+			consumer_goods = 200
+		}
+		upkeep = {
+			minerals = 50
+			energy = 100
+			sr_dark_matter = 3
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+
+######################
+### food buildings ###
+######################
+
+doa_nourishment_center_1 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_nourishment_center_1"
+	}
+	
+	potential = {
+	owner = {
+			country_uses_food = yes
+	}
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_1
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			food = 100
+		}
+		upkeep = {
+			energy = 50
+			sr_dark_matter = 1
+		}
+	}
+	
+	upgrades = {
+	    doa_nourishment_center_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_nourishment_center_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_nourishment_center_2"
+	}
+	
+	potential = {
+	owner = {
+			country_uses_food = yes
+	}
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+			food = 200
+		}
+		upkeep = {
+			energy = 75
+			sr_dark_matter = 2
+		}
+	}
+	
+	upgrades = {
+	    doa_nourishment_center_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_nourishment_center_3 = {
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_nourishment_center_3"
+	}
+	
+	potential = {
+	owner = {
+			country_uses_food = yes
+	}
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	allow = {
+		has_building = doa_automation_uplink_3
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		produces = {
+			food = 400
+		}
+		upkeep = {
+			energy = 100
+			sr_dark_matter = 3
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+
+########################
+### energy buildings ###
+########################
+
+doa_class_4_singularity_1 = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	category = resource
+	base_cap_amount = 2
+	
+	prerequisites = {
+	"tech_class_4_singularity_1"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_1
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+		    energy = 125
+		}
+		upkeep = {
+			sr_dark_matter = 1
+		}
+	}
+	
+	upgrades = {
+	    doa_class_4_singularity_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+
+doa_class_4_singularity_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_class_4_singularity_2"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+		    energy = 250
+		}
+		upkeep = {
+			sr_dark_matter = 2
+		}
+	}
+	
+	upgrades = {
+	    doa_class_4_singularity_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+
+doa_class_4_singularity_3 = {
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = yes
+	category = resource
+	
+	prerequisites = {
+	"tech_class_4_singularity_3"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_building = doa_automation_uplink_3
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		produces = {
+		    energy = 500
+		}
+		upkeep = {
+			sr_dark_matter = 3
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+#######################
+### alloy buildings ###
+#######################
+
+doa_nano_forge_1 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_demolish = yes
+	category = manufacturing
+	
+	prerequisites = {
+	"tech_nano_forge_1"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_1
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+		    alloys = 25
+		}
+		upkeep = {
+		    minerals = 25
+			sr_dark_matter = 1
+		}
+	}
+	
+	
+	
+	upgrades = {
+	    doa_nano_forge_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_nano_forge_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = yes
+	category = manufacturing
+	
+	prerequisites = {
+	"tech_nano_forge_2"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	allow = {
+		OR = {
+		has_building = doa_automation_uplink_2
+		has_building = doa_automation_uplink_3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+		    alloys = 50
+		}
+		upkeep = {
+		    minerals = 37
+			sr_dark_matter = 2
+		}
+	}
+	
+	upgrades = {
+	    doa_nano_forge_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_nano_forge_3 = {
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = yes
+	category = manufacturing
+	
+	prerequisites = {
+	"tech_nano_forge_3"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	allow = {
+		has_building = doa_automation_uplink_3
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		produces = {
+		    alloys = 100
+		}
+		upkeep = {
+		    minerals = 50
+			sr_dark_matter = 3
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+########################
+### science building ###
+########################
+
+doa_master_archive_1 = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	category = research
+	empire_limit = {
+		base = 1
+	}
+	
+	prerequisites = {
+	"tech_master_archive_1"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+		    physics_research = 100
+			society_research = 100
+			engineering_research = 100
+		}
+		upkeep = {
+		    energy = 50
+			sr_dark_matter = 1
+		}
+	}
+	
+	country_modifier = {
+    all_technology_research_speed = 0.1
+    }
+	
+	planet_modifier = {
+		planet_researchers_produces_mult = 0.2
+	}
+	
+	upgrades = {
+	    doa_master_archive_2
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_master_archive_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = yes
+	category = research
+	
+	prerequisites = {
+	"tech_master_archive_2"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+		    physics_research = 200
+			society_research = 200
+			engineering_research = 200
+		}
+		upkeep = {
+		    energy = 75
+			sr_dark_matter = 2
+		}
+	}
+	
+	country_modifier = {
+    all_technology_research_speed = 0.15
+    }
+	
+	planet_modifier = {
+		planet_researchers_produces_mult = 0.3
+	}
+	
+	upgrades = {
+	    doa_master_archive_3
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+doa_master_archive_3 = {
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = yes
+	category = research
+	
+	prerequisites = {
+	"tech_master_archive_3"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+	has_fully_upgraded_capital = yes
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		produces = {
+		    physics_research = 500
+			society_research = 500
+			engineering_research = 500
+		}
+		upkeep = {
+		    energy = 100
+			sr_dark_matter = 3
+		}
+	}
+	
+	country_modifier = {
+    all_technology_research_speed = 0.25
+    }
+	
+	planet_modifier = {
+		planet_researchers_produces_mult = 0.5
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}
+
+
+##########################
+### military buildings ###
+##########################
+
+doa_eternal_bastion = {
+	base_buildtime = @b4_time
+	can_build = yes
+	can_demolish = yes
+	planetary_ftl_inhibitor = yes
+	category = army
+	
+	prerequisites = {
+	"tech_eternal_bastion_1"
+	}
+	
+	potential = {
+	    NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_soldier_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_warrior_drone_add = 5
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+        cost = {
+			minerals = @b4_minerals
+		}
+		upkeep = {
+		    energy = 50
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+}

@@ -1,0 +1,159 @@
+###########################
+### Renounce Ascendancy ###
+###########################
+
+@ambitionDuration = -1
+@ambitionCost = 75
+@ambitionUpkeep = 75
+
+renounce_galactic_ascendancy = {
+      length = 0
+	  icon = "GFX_edict_type_policy"
+	  
+	  resources = {
+		category = edicts
+		upkeep = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+	}
+	
+	potential = {
+	    has_country_flag = ascended_empire
+		NOR = {
+		   has_valid_civic = civic_fanatic_purifiers
+		   has_valid_civic = civic_inwards_perfection
+		   has_authority = auth_hive_mind
+		   has_authority = auth_machine_intelligence
+	    }
+	}
+
+	allow = {
+	  custom_tooltip = {
+	     fail_text = is_at_war
+		 is_at_war = no
+	   }
+	  custom_tooltip = {
+	     fail_text = has_just_ascended
+		 NOT = { has_country_flag = new_ascended_empire }
+	   }
+	   custom_tooltip = {
+	     fail_text = has_been_banished
+		 NOT = { has_country_flag = banished_empire }
+	   }
+	}
+
+    effect = {
+	  hidden_effect = {
+           country_event = { id = renounce_event.1 }
+		}	
+	}
+
+    ai_weight = {
+        weight = 100
+		modifier = {
+		    factor = 0
+			num_owned_planets > 5
+		}
+        modifier = {
+            factor = 0
+            fleet_power > 100000
+		}
+	}
+}
+
+reclaim_galactic_ascendancy = {
+      length = 0
+	  icon = "GFX_edict_type_policy"
+	  
+	  resources = {
+		category = edicts
+		upkeep = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+	}
+	
+	potential = {
+	    has_country_flag = ascended_empire_isolationist
+		NOR = {
+		   has_valid_civic = civic_fanatic_purifiers
+		   has_valid_civic = civic_inwards_perfection
+		   has_authority = auth_hive_mind
+		   has_authority = auth_machine_intelligence
+	    }
+	}
+
+	allow = {
+	  custom_tooltip = {
+	     fail_text = is_at_war
+		 is_at_war = no
+	   }
+	  custom_tooltip = {
+	     fail_text = has_just_ascended
+		 NOT = { has_country_flag = new_isolationist_empire }
+	   }
+	   custom_tooltip = {
+	     fail_text = has_been_banished
+		 NOT = { has_country_flag = banished_empire }
+	   }
+	}
+
+    effect = {
+	  hidden_effect = {
+           country_event = { id = renounce_event.8 }
+		}	
+	}
+
+    ai_weight = {
+        weight = 1
+		modifier = {
+		    factor = 999
+			num_owned_planets > 8
+		}
+        modifier = {
+            factor = 999
+            fleet_power > 200000
+		}
+	}
+}
+
+
+
+ascended_rearmament = {
+    length = @ambitionDuration
+	icon = "GFX_edict_type_time"
+	
+	resources = {
+		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
+	}
+	
+	potential = {
+	   has_country_flag = re_ascended_empire
+	}
+
+    modifier = {
+	    starbase_shipyard_build_speed_mult = 0.3
+		starbase_shipyard_build_cost_mult = 0.3
+		ships_upkeep_mult = -0.2
+	}
+
+    ai_weight = {
+	   weight = 10
+	   modifier = {
+	       factor = 50
+		   has_ethic = ethic_fanatic_militarist
+		   }
+	}
+}	
+

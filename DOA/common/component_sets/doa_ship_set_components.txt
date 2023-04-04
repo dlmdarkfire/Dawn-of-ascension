@@ -1,0 +1,15 @@
+component_set = {
+	key = "feescort_combat_computers"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_computer"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "febattlecruiser_combat_computers"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_computer"
+	icon_frame = 1	
+}

@@ -1,0 +1,158 @@
+#### Galactic ascension
+
+situation_galactic_ascendancy = {
+    picture = GFX_evt_fallen_empire_awakes
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	on_progress_complete = {
+		hidden_effect = {
+			situation_event = { id = ascension_event.12 }
+		}
+		destroy_situation = this
+	}
+	stages = {
+	    stage_1 = {
+		    icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 50
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				situation_event = { id = ascension_event.2 }
+			}
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 150
+			on_first_enter = {
+				situation_event = { id = ascension_event.3 }
+			}
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 200
+			on_first_enter = {
+				situation_event = { id = ascension_event.4 }
+			}
+		}
+		stage_5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_blue
+			end = 250
+			on_first_enter = {
+				situation_event = { id = ascension_event.5 }
+			}
+		}
+		stage_6 = {
+			icon = GFX_situation_stage_6
+			icon_background = GFX_situation_stage_frame_blue
+			end = 300
+			on_first_enter = {
+				situation_event = { id = ascension_event.13 }
+			}
+		}
+		stage_7 = {
+			icon = GFX_situation_stage_7
+			icon_background = GFX_situation_stage_frame_blue
+			end = 350
+			on_first_enter = {
+				situation_event = { id = ascension_event.16 }
+			}
+		}
+		
+	}
+	
+	approach = {
+	    name = situation_galactic_ascendancy_regular
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = situation_galactic_ascendancy_regular_effect
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				physics_research = 250
+			    society_research = 250
+			    engineering_research = 250
+			}
+		}
+		modifier = {
+		   country_unity_produces_mult = 0.1
+		}
+	}
+	
+	approach = {
+		name = situation_galactic_ascendancy_extra
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = situation_galactic_ascendancy_extra_effect
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				physics_research = 500
+			    society_research = 500
+			    engineering_research = 500
+			}
+		}
+		modifier = {
+			country_unity_produces_mult = 0.2
+		}
+	}
+	
+	approach = {
+		name = situation_galactic_ascendancy_frugal
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_red
+
+		on_select = {
+			custom_tooltip = situation_galactic_ascendancy_frugal_effect
+		}
+	}
+	
+	monthly_progress = {
+	    base = 1
+		
+		modifier = {
+			add = 0.8
+			desc = situation_galactic_ascendancy_extra_progress
+			current_situation_approach = situation_galactic_ascendancy_extra
+		}
+		
+		modifier = {
+			add = -0.5
+			desc = situation_galactic_ascendancy_frugal_progress
+			current_situation_approach = situation_galactic_ascendancy_frugal
+		}
+	
+		
+		modifier = {
+			add = 0.5
+			desc = situation_galactic_ascendancy_has_alpha
+			owner = {
+			        has_global_flag = acot_activated
+					AND = {
+					has_technology = tech_dark_matter_power_core_ae
+					}
+			}
+		}
+		modifier = {
+			add = 1
+			desc = situation_galactic_ascendancy_has_delta
+			owner = {
+			    has_global_flag = acot_activated
+		        AND = {
+				has_technology = tech_dark_matter_power_core_dm
+				}
+			}
+		}
+	}
+}	

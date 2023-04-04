@@ -1,0 +1,10 @@
+FE_National = {
+	
+	randomized = no
+
+	portraits = {
+	}
+
+	graphical_culture = fe_national
+	move_pop_sound_effect = "moving_pop_confirmation"
+}

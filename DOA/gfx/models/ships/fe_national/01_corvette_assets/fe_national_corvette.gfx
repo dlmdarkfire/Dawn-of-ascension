@@ -1,0 +1,26 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_corvette_S3_mesh"
+		file = "gfx/models/ships/fe_national/01_corvette_assets/fe_national_corvette_S3.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_corvette_M1S1_mesh"
+		file = "gfx/models/ships/fe_national/01_corvette_assets/fe_national_corvette_M1S1.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_fighter_mesh"
+		file = "gfx/models/ships/fe_national/01_corvette_assets/fe_national_fighter.mesh"
+		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "fe_national_corvette_2_mesh"
+		file = "gfx/models/ships/fe_national/01_corvette_assets/fe_national_corvette_2.mesh"
+		scale = 1.0
+	}
+}

@@ -1,0 +1,18 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "fe_national_feescort_mesh"
+		file = "gfx/models/ships/fe_national/03_escort_Assets/fe_national_small.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "MeshShape"
+			index = 0
+			texture_diffuse = "ascendant_01_small_warship_diffuse.dds"
+			texture_normal = "ascendant_empire_small_warship_normal.dds"
+			texture_specular = "ascendant_empire_small_warship_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+
+}

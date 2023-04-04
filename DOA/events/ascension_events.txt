@@ -1,0 +1,640 @@
+namespace = ascension_event
+
+### becoming an ascended empire
+country_event = {
+    id = ascension_event.1
+	title = ascension_event.1.name
+	picture = GFX_evt_fallen_empire_awakes
+	show_sound = event_celebration
+	location = from
+	is_triggered_only = yes
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = ascension_event.1.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = ascension_event.1.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = ascension_event.1.desc.2
+	}	
+
+	immediate = {
+		owner = {
+			if = {
+			    start_situation = {
+					type = situation_galactic_ascendancy
+					target = this
+				}
+			}
+		}
+	}
+	
+	option = {
+	     name = ascension_event.1.a
+		 trigger = { 
+			NOR = { 
+			  has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+			}  
+		 set_country_flag = ascension_started
+		 set_country_flag = doa_tech_1
+		 hidden_effect = {
+		 every_country = {					# Notify Players
+				limit = {
+					NOT = { is_same_value = root }
+					is_ai = no			
+				}
+				country_event = { id = ascension_event.10 }
+			}
+		}
+	}
+	
+	option = {
+	     name = ascension_event.1.b
+		 trigger = { 
+			  has_authority = auth_hive_mind
+			  }  
+		 set_country_flag = ascension_started
+		 set_country_flag = doa_tech_1
+		 hidden_effect = {
+		 every_country = {					# Notify Players
+				limit = {
+					NOT = { is_same_value = root }
+					is_ai = no			
+				}
+				country_event = { id = ascension_event.14 }
+			}
+		}
+	}
+	
+	option = {
+	     name = ascension_event.1.c
+		 trigger = { 
+			  has_authority = auth_machine_intelligence
+			  }  
+		 set_country_flag = ascension_started
+		 set_country_flag = doa_tech_1
+		 hidden_effect = {
+		 every_country = {					# Notify Players
+				limit = {
+					NOT = { is_same_value = root }
+					is_ai = no			
+				}
+				country_event = { id = ascension_event.15 }
+			}
+		}
+	}
+}
+
+
+##### Perfecting megastructures
+situation_event = {
+    id = ascension_event.2
+	title = ascension_event.2.name
+	desc = ascension_event.2.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_celebration
+	location = target
+	is_triggered_only = yes
+	situation = this
+	
+	option = {
+	   name = ascension_event.2.a
+	   owner = {   
+	   set_country_flag = doa_tech_2
+	   if = { 
+	       limit = {
+		       host_has_dlc = "Megacorp"
+			   NOR = {
+			       has_tech_option = tech_matter_decompressor
+			       has_technology = tech_matter_decompressor
+				   }
+				}
+                add_research_option = tech_matter_decompressor
+			}
+		if = {
+            limit = {
+		       host_has_dlc = "Utopia"
+			   NOR = {
+			       has_tech_option = tech_ring_world
+			       has_technology = tech_ring_world
+				   }
+				}
+                add_research_option = tech_ring_world
+			}
+		if = {
+            limit = {
+		       host_has_dlc = "Utopia"
+			   NOR = {
+			       has_tech_option = tech_dyson_sphere
+			       has_technology = tech_dyson_sphere
+				   }
+				}
+                add_research_option = tech_dyson_sphere
+			}
+		if = {
+             limit = {
+		       host_has_dlc = "Utopia"
+			   OR = {
+			       has_technology = tech_matter_decompressor
+				   has_technology = tech_ring_world
+				   has_technology = tech_dyson_sphere
+				}
+			}
+			give_technology = { tech = tech_ascended_mega }
+		}
+		}
+	}			 
+}
+
+
+
+###### dimensional espionage
+situation_event = {
+	id = ascension_event.3
+	title = ascension_event.3.name
+	desc = ascension_event.3.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_conversation
+	location = target
+	is_triggered_only = yes
+	situation = this
+	
+	option = {
+		name = ascension_event.3.a
+		owner = {
+		set_country_flag = doa_tech_3
+		give_technology = { tech = tech_ascended_espionage message = no }
+		}
+	}
+}
+
+
+###### dark matter research 
+situation_event = {
+	id = ascension_event.4
+	title = ascension_event.4.name
+	desc = ascension_event.4.desc
+	picture = GFX_evt_physics_research
+	show_sound = event_solar_fusion
+	location = target
+	is_triggered_only = yes
+	situation = this
+	
+	option = {
+		name = ascension_event.4.a
+		owner = {
+		set_country_flag = doa_tech_4
+		if = {
+			limit = { 
+				NOR = {
+					has_technology = tech_dark_matter_propulsion
+					has_tech_option = tech_dark_matter_propulsion
+				}
+			}
+			add_research_option = tech_dark_matter_propulsion
+		}	
+		if = {
+			limit = { 
+				NOR = {
+					has_technology = tech_dark_matter_deflector
+					has_tech_option = tech_dark_matter_deflector
+				}
+			}
+			add_research_option = tech_dark_matter_deflector
+		}
+		if = {
+             limit = {
+			   OR = {
+			       has_technology = tech_dark_matter_deflector
+				   has_technology = tech_dark_matter_propulsion
+				}
+			}
+			give_technology = { tech = tech_ascended_shields message = no }
+		  }
+	   }	
+	}
+}
+
+
+#### fe buildings
+situation_event = {
+	id = ascension_event.5
+	title = ascension_event.5.name
+	desc = ascension_event.5.desc
+	picture = GFX_evt_city_planet
+	show_sound = event_cityscape
+	location = target
+	is_triggered_only = yes
+	situation = this
+	
+	option = {
+		name = ascension_event.5.a
+		owner = {
+		set_country_flag = doa_tech_5
+		give_technology = { tech = tech_ascended_buildings message = no }
+	   }  
+	}		
+}
+
+
+
+##### FE ships
+country_event = {
+	id = ascension_event.6
+	title = ascension_event.6.name
+	picture = GFX_evt_fallen_empire
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+	
+	desc = {
+	  trigger = {
+		}
+        text = ascension_event.6.desc
+	}
+	
+	immediate = {
+	owner = {
+	set_country_flag = doa_tech_6
+	}
+	}
+	
+	option = {
+		name = ascension_event.6.a
+		owner = {
+		add_resource = { influence = 100 }
+		give_technology = { tech = tech_ascended_ships message = no }
+		give_technology = { tech = tech_ascended_hulls message = no }
+		hidden_effect = {
+			set_graphical_culture = fe_national
+			set_city_graphical_culture = fallen_empire_01
+		    }
+	    }
+		ai_chance = { factor = 1000 }
+	 }  
+	 
+	 option = {
+		name = ascension_event.6.b
+		owner = {
+		add_resource = { influence = 100 }
+		give_technology = { tech = tech_ascended_ships message = no }
+		give_technology = { tech = tech_ascended_hulls message = no }
+		hidden_effect = {
+			set_graphical_culture = fe_national
+		    }
+	    }
+		ai_chance = { factor = 0 }
+	 }
+	
+	option = {
+		name = ascension_event.6.c
+		owner = {
+		add_resource = { influence = 100 }
+		give_technology = { tech = tech_ascended_base_ships message = no }
+		give_technology = { tech = tech_ascended_hulls message = no }
+	  }
+	  ai_chance = { factor = 0 }
+   }
+}
+
+
+##### Cities in the skies
+country_event = {
+	id = ascension_event.7
+	title = ascension_event.7.name
+	picture = GFX_evt_city_planet
+	show_sound = event_cityscape
+	location = from
+	is_triggered_only = yes
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = ascension_event.7.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = ascension_event.7.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = ascension_event.7.desc.2
+	}
+	
+	option = {
+	     name = ascension_event.7.a
+		 trigger = { 
+			NOR = { 
+			  has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+			}  
+		 set_country_flag = doa_tech_7
+		 if = {
+		    limit = {
+			    host_has_dlc = "Megacorp"
+				has_ascension_perk = ap_arcology_project
+			}
+			give_technology = { tech = tech_ascended_arcology }
+		  }
+		  
+		  if = {
+			limit = { 
+				host_has_dlc = "Megacorp"
+				NOT = {
+					has_ascension_perk = ap_arcology_project
+				}
+			}
+			give_technology = { tech = tech_ascended_arcology_project }
+		 }
+	}
+	
+	option = {
+	     name = ascension_event.7.b
+		 trigger = { 
+			  has_authority = auth_hive_mind
+			  }  
+		 set_country_flag = doa_tech_7
+		 if = {
+		    limit = {
+				has_ascension_perk = ap_hive_worlds
+			}
+            give_technology = { tech = tech_ascended_terraforming_projects }
+		}
+		if = {
+		    limit = {
+			   NOT = {
+				has_ascension_perk = ap_hive_worlds
+			         }
+			    }	
+            give_technology = { tech = tech_ascended_hive_world }
+		    }
+	}
+	
+	option = {
+	     name = ascension_event.7.c
+		 trigger = { 
+			  has_authority = auth_machine_intelligence
+			  }  
+		 set_country_flag = doa_tech_7
+		 if = {
+		    limit = {
+				has_ascension_perk = ap_machine_worlds
+			}
+            give_technology = { tech = tech_ascended_terraforming_projects }
+		}
+		if = {
+		    limit = {
+			   NOT = {
+				has_ascension_perk = ap_machine_worlds
+			         }
+			    }	
+            give_technology = { tech = tech_ascended_machine_world }
+	    }
+	}
+}
+	
+
+
+
+#### ascension complete
+country_event = {
+	id = ascension_event.8
+	title = ascension_event.8.name
+	picture = GFX_evt_coronation
+	show_sound = event_celebration
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+	   owner = { save_event_target_as = owner }
+	}
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = ascension_event.8.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = ascension_event.8.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = ascension_event.8.desc.2
+	}
+	
+	option = {
+		name = ascension_event.8.a
+		trigger = { 
+			NOT = { 
+			  has_valid_civic = civic_inwards_perfection
+			  }
+			}
+		owner = {
+		remove_country_flag = doa_tech_1
+		remove_country_flag = doa_tech_2
+		remove_country_flag = doa_tech_3
+		remove_country_flag = doa_tech_4
+		remove_country_flag = doa_tech_5
+		remove_country_flag = doa_tech_6
+		remove_country_flag = doa_tech_7
+		add_resource = { unity = 30000 }
+		set_country_flag = ascended_empire
+	    force_add_civic = civic_ascended_empire
+	    set_government_cooldown = no
+		set_timed_country_flag = { flag = new_ascended_empire days = 7200 }
+		}
+	}
+	
+	option = {
+		name = ascension_event.8.b
+		trigger = {  
+			  has_valid_civic = civic_inwards_perfection
+			}
+		owner = {
+		remove_country_flag = doa_tech_1
+		remove_country_flag = doa_tech_2
+		remove_country_flag = doa_tech_3
+		remove_country_flag = doa_tech_4
+		remove_country_flag = doa_tech_5
+		remove_country_flag = doa_tech_6
+		remove_country_flag = doa_tech_7
+		add_resource = { unity = 30000 }
+		set_country_flag = ascended_empire_isolationist
+	    force_add_civic = civic_isolationist_empire
+		force_add_civic = civic_isolationist_ideals
+		force_add_civic = civic_secured_borders
+	    set_government_cooldown = no
+		}
+	}
+}
+
+# new ascended empire notification for all players
+country_event = {
+	id = ascension_event.10
+	title = ascension_event.10.name
+	desc = ascension_event.10.desc
+	picture = GFX_evt_fallen_empire
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = ascension_event.10.a			
+	}
+}
+
+
+#### ai ascending without AP because ai is terrible at AP management
+country_event = {
+	id = ascension_event.11
+	title = ascension_event.11.name
+	desc = ascension_event.11.desc
+	hide_window = yes
+	
+	trigger = {
+	    is_ai = yes
+		is_subject = no
+		num_owned_planets > 10
+		num_ascension_perks > 7
+		fleet_power > 200000
+		AND = {
+			has_technology = tech_mega_engineering
+			has_technology = tech_dark_matter_power_core
+			has_technology = tech_ascension_theory
+		}
+		NOT = { 
+		has_country_flag = ascension_started
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			factor = 2.0
+			AND = {
+			    any_country = {
+				   has_ascension_perk = ap_galactic_ascendancy
+				}
+			}
+		}
+	}
+	immediate = {
+	        country_event = { id = ascension_event.1 }
+	}
+}
+
+situation_event = {
+    id = ascension_event.12
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = ascension_event.8
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+
+situation_event = {
+    id = ascension_event.13
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = ascension_event.6
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+# new ascended empire notification for all players
+country_event = {
+	id = ascension_event.14
+	title = ascension_event.14.name
+	desc = ascension_event.14.desc
+	picture = GFX_evt_fallen_empire
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = ascension_event.14.a			
+	}
+}
+
+# new ascended empire notification for all players
+country_event = {
+	id = ascension_event.15
+	title = ascension_event.15.name
+	desc = ascension_event.15.desc
+	picture = GFX_evt_fallen_empire
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = ascension_event.15.a			
+	}
+}
+
+situation_event = {
+    id = ascension_event.16
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = ascension_event.7
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}

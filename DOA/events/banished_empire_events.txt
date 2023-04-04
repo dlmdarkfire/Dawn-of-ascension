@@ -1,0 +1,123 @@
+namespace = banished_empire
+
+
+#victory event
+country_event = {
+	id = banished_empire.1
+	title = banished_empire.1.name
+	desc = banished_empire.1.desc
+	picture = GFX_evt_grand_speech
+	show_sound = event_celebration
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = banished_empire.1.a
+	}
+}
+
+#banished empire
+country_event = {
+	id = banished_empire.2
+	title = banished_empire.2.name
+	desc = banished_empire.2.desc
+	picture = GFX_evt_burning_city
+	show_sound = event_planetary_riot
+	location = from
+		
+	is_triggered_only = yes
+	
+	immediate = {
+	    every_owned_planet = {
+                       limit = {
+                            is_capital = yes
+                    }
+						add_planet_devastation = 50
+		}
+	}
+	
+		option = {
+		name = banished_empire.2.a
+		owner = {
+			if = {
+			    start_situation = {
+					type = situation_banished_empire
+					target = this
+				}
+			}
+		}
+		set_country_flag = banished_empire
+		remove_country_flag = ascended_empire
+		hidden_effect = {
+			change_government = {
+				civics = {
+				  civic = civic_corvee_system
+					civic = civic_demilitarized
+					civic = civic_social_chaos
+					civic = civic_national_humiliation
+				}
+			}	
+		}
+	}
+}
+
+#notification for all
+country_event = {
+	id = banished_empire.3
+	title = banished_empire.3.name
+	desc = banished_empire.3.desc
+	picture = GFX_evt_fallen_empire
+	show_sound = event_alien_signal
+	location = from
+ 
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = banished_empire.3.a
+	}
+}
+
+
+##### treaty over
+situation_event = {
+    id = banished_empire.4
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = {
+	    owner = {
+		   country_event = { id = banished_empire.5
+		   scopes = { from = prev
+		       } 
+		    } 
+	    } 
+    }
+}
+
+
+#### treaty
+country_event = {
+    id = banished_empire.5
+    title = banished_empire.5.name
+    desc = banished_empire.5.desc
+    picture = GFX_evt_fallen_empire
+    show_sound = event_celebration
+	location = from
+   
+    is_triggered_only = yes
+
+	option = {
+	   name = banished_empire.5.a
+	   set_country_flag = ascended_empire
+	   remove_country_flag = banished_empire
+	   force_remove_civic = civic_demilitarized
+	   force_remove_civic = civic_social_chaos
+	   force_remove_civic = civic_national_humiliation
+	   force_add_civic = civic_ascended_empire
+	   set_timed_country_flag = { flag = re_ascended_empire days = 3600 }
+	}
+}
+ 
+   

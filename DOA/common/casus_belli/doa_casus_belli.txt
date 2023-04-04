@@ -1,0 +1,64 @@
+#################################
+# Dawn of ascension CASUS BELLI #
+#################################
+
+cb_banish_empire = {
+	show_in_diplomacy = yes
+	show_notification = yes
+	
+	potential = {
+	is_country_type = default
+	has_country_flag = ascended_empire
+			NOR = {
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_machine_terminator
+				has_valid_civic = civic_machine_assimilator
+				has_valid_civic = civic_fanatic_purifiers
+				has_authority = auth_hive_mind
+		        has_authority = auth_machine_intelligence
+			}
+	}
+
+	is_valid = {
+		is_subject = no
+		NOT = { is_in_federation_with = from }
+		from = { 
+			AND = {
+				OR = {
+					has_country_flag = ascended_empire
+					}
+				NOR = {
+				    has_valid_civic = civic_hive_devouring_swarm
+				    has_valid_civic = civic_machine_terminator
+				    has_valid_civic = civic_machine_assimilator
+				    has_valid_civic = civic_fanatic_purifiers
+					has_authority = auth_hive_mind
+		            has_authority = auth_machine_intelligence
+				}
+			}
+		}
+		OR = {
+			opinion_level = { who = from level <= poor }
+			is_harming_relations_with = from
+			from = { is_rival = prev }
+			ROOT = {
+				is_ai = no
+			}
+		}
+		OR = {
+			ROOT = {
+				is_ai = no
+			}
+			is_neighbor_of = FROM
+			any_subject = {
+				is_neighbor_of = FROM
+			}
+			FROM = {
+				any_subject = {
+					is_neighbor_of = ROOT
+				}
+			}
+		}
+	}
+}
+    

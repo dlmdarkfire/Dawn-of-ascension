@@ -1,0 +1,286 @@
+##Escorts
+
+utility_component_template = {
+	key = "feescort_COMBAT_COMPUTER_1"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { feescort }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+
+	modifier = {
+		ship_evasion_mult = 0.25
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "feescort_COMBAT_COMPUTER_2"
+	size = small
+	icon = "GFX_ship_part_computer_picket_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { feescort }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+		
+	modifier = {
+		ship_evasion_mult = 0.10
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+	}
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "feescort_COMBAT_COMPUTER_3"
+	size = small
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { feescort }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	
+	
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 20
+	}
+	
+	ai_weight = {
+		weight = 5
+	}	
+}
+
+utility_component_template = {
+	key = "feescort_COMBAT_COMPUTER_4"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { feescort }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	
+		
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+	}
+	
+	ai_weight = {
+		weight = 5
+	}	
+}
+
+#Battlecruisers
+
+
+
+utility_component_template = {
+	key = "febattlecruiser_COMBAT_COMPUTER_2"
+	size = small
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { febattlecruiser }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	
+	
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 20
+	}
+	
+	ai_weight = {
+		weight = 5
+	}	
+}
+
+utility_component_template = {
+	key = "febattlecruiser_COMBAT_COMPUTER_3"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { febattlecruiser }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+	}
+	
+	ai_weight = {
+		weight = 5
+	}	
+}
+
+
+##Utilities
+
+utility_component_template = {
+	key = "feescort_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = 1000
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 111
+			sr_dark_matter = 3
+		}
+		upkeep = {
+			energy = 1.11
+			alloys = 0.112
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { feescort }
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+utility_component_template = {
+	key = "febattlecruiser_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = 2000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 222
+			sr_dark_matter = 6
+		}
+		upkeep = {
+			energy = 2.22
+			alloys = 0.222
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { febattlecruiser }
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+
+utility_component_template = {
+	key = "feescort_SHIP_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = 90
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 36
+			sr_dark_matter = 3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 14
+	}
+
+	component_set = "thruster_components"
+	size_restriction = { feescort }
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+utility_component_template = {
+	key = "febattlecruiser_SHIP_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = 180
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 72
+			sr_dark_matter = 6
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 10
+	}
+
+	component_set = "thruster_components"
+	size_restriction = { febattlecruiser }
+	
+	ai_weight = {
+		weight = 10
+	}
+}

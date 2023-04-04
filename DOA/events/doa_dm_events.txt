@@ -1,0 +1,718 @@
+namespace = doa
+
+##### discovery of dark matter technology 
+country_event = {
+	id = doa.1
+	title = doa.1.name
+	picture = GFX_evt_black_hole
+	
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.1.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.1.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.1.desc.2
+	}
+	
+	trigger = {
+		has_technology = tech_mine_dark_matter
+		has_technology = tech_zero_point_power
+		mid_game_years_passed >= -5
+		any_relation = {
+			is_country_type = fallen_empire	
+			has_communications = root				
+		}
+		NOT = { 
+		has_country_flag = dark_matter_research 
+		}
+		NOT = { 
+		has_country_flag = dark_matter_power_researched 
+		}
+		NOT = { 
+		has_country_flag = dark_matter_research_refused
+		}
+		NOT = {
+		has_country_flag = dark_matter_research_accepted
+		}
+		NOT = { 
+		has_technology = tech_dark_matter_power_core 
+		}
+		NOT = { 
+		has_tech_option = tech_dark_matter_power_core 
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+
+		modifier = {
+			factor = 1.25
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 2
+			fleet_power > 200000
+		}
+	}
+	
+	option = {
+		name = doa.1.a
+		set_country_flag = dark_matter_research_accepted
+		owner = {
+			if = {
+			    start_situation = {
+					type = situation_FE_spying
+					target = this
+				}
+			}
+		}
+	}
+	
+	option = {
+	    name = doa.1.b
+		set_country_flag = dark_matter_research_refused	
+	    ai_chance = {									
+			factor = 0			
+		}	
+    }
+}
+
+country_event = {
+	id = doa.2
+	title = doa.2.name
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.2.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.2.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.2.desc.2
+	}
+
+	option = {
+		name = doa.2.a		
+	}
+}
+
+country_event = {
+	id = doa.3
+	title = doa.3.name
+	desc = doa.3.desc
+	picture = GFX_evt_ship_travel
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = doa.3.a		
+	}
+}
+
+country_event = {
+	id = doa.4
+	title = doa.4.name
+	picture = GFX_evt_inhabited_solar_system
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.4.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.4.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.4.desc.2
+	}
+
+	option = {
+		name = doa.4.a		
+	}
+}
+
+country_event = {
+	id = doa.5
+	title = doa.5.name
+	picture = GFX_evt_sentry_guns
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.5.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.5.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.5.desc.2
+	}
+
+	option = {
+		name = doa.5.a		
+	}
+}
+
+
+country_event = {
+	id = doa.6
+	title = doa.6.name
+	picture = GFX_evt_mysterious_signal
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			if = {
+			    start_situation = {
+					type = situation_gaining_dark_matter
+					target = this
+				}
+			}
+		}
+	}
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.6.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.6.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.6.desc.2
+	}
+
+	option = {
+		name = doa.6.a
+            trigger = { 
+			NOR = { 
+			  has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		 }		
+	}
+	option = {
+		name = doa.6.b
+            trigger = { 
+			  has_authority = auth_hive_mind
+		  }		
+	 }
+	 option = {
+		name = doa.6.b
+            trigger = { 
+			  has_authority = auth_machine_intelligence
+		  } 	
+	 }
+}
+
+
+country_event = {
+	id = doa.7
+	title = doa.7.name
+	picture = GFX_evt_analyzing_artifacts
+	location = from
+	is_triggered_only = yes
+
+	desc = {
+	  trigger = {
+		}
+        text = doa.7.desc
+	}
+
+	option = {
+		name = doa.7.a	
+	}
+}
+
+country_event = {
+	id = doa.8
+	title = doa.8.name
+	picture = GFX_evt_analyzing_artifacts
+	location = from
+	is_triggered_only = yes
+
+	desc = {
+        text = doa.8.desc
+	}
+
+	option = {
+		name = doa.8.a	
+	}
+}
+
+country_event = {
+	id = doa.9
+	title = doa.9.name
+	picture = GFX_evt_analyzing_artifacts
+	location = from
+	is_triggered_only = yes
+
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.9.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.9.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.9.desc.2
+	}
+
+	option = {
+		name = doa.9.a		
+	}
+}
+
+
+country_event = {
+	id = doa.11
+	title = doa.11.name
+	picture = GFX_evt_analyzing_artifacts
+	location = from
+	is_triggered_only = yes
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.11.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.11.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.11.desc.2
+	}
+
+	option = {
+		name = doa.11.a
+        give_technology = { tech = tech_dark_matter_power_core	message = no }
+	    set_country_flag = dark_matter_power_researched	
+		hidden_effect = {
+		 every_country = {					# Notify Players
+				limit = {
+					NOT = { is_same_value = root }
+					is_ai = no			
+				}
+				country_event = { id = doa.12 }
+			}
+		}
+	}
+}
+
+# dark matter researched notification
+country_event = {
+	id = doa.12
+	title = doa.12.name
+	desc = doa.12.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = doa.12.a			
+	}
+}
+
+
+### dark matter atifact research
+country_event = {
+	id = doa.13
+	title = doa.13.name
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_alien_signal
+	
+	trigger = {
+		has_technology = tech_mine_dark_matter
+		has_technology = tech_zero_point_power
+		has_technology = tech_arcane_deciphering
+		has_resource = { type = minor_artifacts amount > 50 }
+		mid_game_years_passed >= -12
+		NOT = { 
+		has_country_flag = dark_matter_research 
+		}
+		NOT = { 
+		has_country_flag = dark_matter_power_researched 
+		}
+		NOT = { 
+		has_country_flag = dark_matter_artifact
+		}
+		NOT = { 
+		has_country_flag = dark_matter_artifact_attempted
+		}
+		NOT = { 
+		has_country_flag = dark_matter_research_refused
+		}
+		NOT = { 
+		has_technology = tech_dark_matter_power_core 
+		}
+		NOT = { 
+		has_tech_option = tech_dark_matter_power_core 
+		}
+	}
+	
+	desc = {
+        text = doa.13.desc
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 240
+	}	
+	
+	option = {
+		name = doa.13.a
+		set_country_flag = dark_matter_artifact
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	
+	option = {
+	   name = doa.13.b
+	   set_country_flag = dark_matter_artifact_attempted
+	}
+}
+
+#### dark matter failure
+country_event = {
+	id = doa.14
+	title = doa.14.name
+	picture = GFX_evt_burning_city
+	show_sound = event_screams
+	location = from
+	is_triggered_only = yes
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.14.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.14.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.14.desc.2
+	}
+	
+	immediate = {
+	    every_owned_planet = {
+                       limit = {
+                            is_capital = yes
+                    }
+						add_planet_devastation = 15
+		}
+	}
+
+	option = {
+		name = doa.14.a	
+	}
+}
+
+
+#### dark matter data found
+country_event = {
+	id = doa.15
+	title = doa.15.name
+	picture = GFX_evt_intelligence_report
+	show_sound = event_alien_signal
+	location = from
+	is_triggered_only = yes
+	
+	desc = {
+	  trigger = {
+	       NOR = {
+		      has_authority = auth_hive_mind
+		      has_authority = auth_machine_intelligence
+			  }
+		}
+        text = doa.15.desc
+	}
+	
+	desc = {
+	  trigger = {
+	    has_authority = auth_hive_mind
+		}
+		text = doa.15.desc.1
+	}	
+	desc = {
+	  trigger = {
+	    has_authority = auth_machine_intelligence
+		}
+		text = doa.15.desc.2
+	}
+	
+	immediate = {
+		owner = {
+			if = {
+			    start_situation = {
+					type = situation_gaining_dark_matter
+					target = this
+				}
+			}
+		}
+	}
+	
+	option = {
+	    name = doa.15.a
+	}
+}	
+
+
+
+
+#### hidden events
+
+situation_event = {
+    id = doa.16
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = {
+	    owner = { 
+		   country_event = { id = doa.2
+		   scopes = { from = prev
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.17
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.3
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.18
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.4
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.19
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.5
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.20
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.6
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.21
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.7
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.22
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.8
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.23
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.9
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}
+
+situation_event = {
+    id = doa.24
+    hide_window = yes
+   
+    is_triggered_only = yes
+
+	Immediate = { 
+	    owner = { 
+		   country_event = { id = doa.11
+		   scopes = { from = prev 
+		       } 
+		    } 
+	    } 
+    }
+}

@@ -1,0 +1,1246 @@
+###########################
+###Ascended empire types###
+###########################
+
+
+civic_ascended_empire = {
+    modification = no
+    icon ="gfx/interface/icons/governments/civics/civic_doa_ascensionists.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		pop_government_ethic_attraction = 2
+		country_unity_produces_mult = 0.1
+        country_government_civic_points_add = 3
+	}
+}
+
+
+civic_banished_empire = {
+    modification = no
+    icon ="gfx/interface/icons/governments/civics/negatives/civic_doa_empire_in_decline.dds"
+	potential = {
+		civics = {
+			value = civic_banished_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_crime_mult = 0.3
+		pop_happiness = -0.3
+		country_government_civic_points_add = -3
+	}
+}
+
+
+civic_isolationist_empire = {
+    modification = no
+    icon ="gfx/interface/icons/governments/civics/civic_doa_inwards_perfection.dds"
+	potential = {
+		civics = {
+			value = civic_isolationist_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+	    country_claim_influence_cost_mult = 3
+		country_starbase_influence_cost_mult = 3
+		country_influence_produces_mult = -0.3
+		envoys_add = -5
+	}
+}
+
+###################
+### Ethics based###
+###################
+
+
+### militarist
+
+civic_ascended_navy = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_ascended_navy.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	    civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_defenders_of_eden
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_immigration_Haven
+				value = civic_national_purity
+				value = civic_spirit_of_liberty
+				value = civic_divine_leadership
+				value = civic_technological_mastery
+				value = civic_chosen_of_the_shroud
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_militarist
+                value = ethic_militarist
+                value = ethic_fanatic_militarist
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		ship_fire_rate_mult = 0.15
+		ships_upkeep_mult = -0.1
+	}
+}
+
+
+### pacifist
+
+civic_defenders_of_eden = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_defenders_of_eden.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_ascended_navy
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_immigration_Haven
+				value = civic_national_purity
+				value = civic_spirit_of_liberty
+				value = civic_divine_leadership
+				value = civic_technological_mastery
+				value = civic_chosen_of_the_shroud
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_pacifist
+                value = ethic_pacifist
+                value = ethic_fanatic_pacifist
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		ship_home_territory_fire_rate_mult = 0.25
+ 
+	}
+}
+
+
+####xenophile
+
+civic_immigration_Haven = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_free_haven.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_ascended_navy
+				value = civic_defenders_of_eden
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_national_purity
+				value = civic_spirit_of_liberty
+				value = civic_divine_leadership
+				value = civic_technological_mastery
+				value = civic_chosen_of_the_shroud
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_xenophile
+                value = ethic_xenophile
+                value = ethic_fanatic_xenophile
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_immigration_pull_mult = 0.5
+		pop_growth_from_immigration = 0.2
+ 
+	}
+}
+
+
+### xenophobe
+
+civic_national_purity = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_inwards_perfection.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_ascended_navy
+				value = civic_defenders_of_eden
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_immigration_Haven
+				value = civic_spirit_of_liberty
+				value = civic_divine_leadership
+				value = civic_technological_mastery
+				value = civic_chosen_of_the_shroud
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_xenophobe
+                value = ethic_xenophobe
+                value = ethic_fanatic_xenophobe
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		pop_growth_speed = 0.10
+		country_unity_produces_mult = 0.1
+		pop_ethic_xenophobe_attraction_mult = 0.5
+ 
+	}
+}
+
+
+### egalitarian
+
+civic_spirit_of_liberty = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_spirit_of_liberty.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_ascended_navy
+				value = civic_defenders_of_eden
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_immigration_Haven
+				value = civic_national_purity
+				value = civic_divine_leadership
+				value = civic_technological_mastery
+				value = civic_chosen_of_the_shroud
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_egalitarian
+                value = ethic_egalitarian
+                value = ethic_fanatic_egalitarian
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_stability_add = 10
+		pop_demotion_time_mult = -0.5
+ 
+	}
+}
+
+### authoritarian
+
+civic_divine_leadership = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_imperial_cult.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_ascended_navy
+				value = civic_defenders_of_eden
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_immigration_Haven
+				value = civic_national_purity
+				value = civic_spirit_of_liberty
+				value = civic_technological_mastery
+				value = civic_chosen_of_the_shroud
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_authoritarian
+                value = ethic_authoritarian
+                value = ethic_fanatic_authoritarian
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_jobs_ruler_produces_mult = 0.2
+		ruler_skill_levels = 3
+ 
+	}
+}
+
+### materialist
+
+civic_technological_mastery = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_ancient_caches_of_technology.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_ascended_navy
+				value = civic_defenders_of_eden
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_immigration_Haven
+				value = civic_national_purity
+				value = civic_spirit_of_liberty
+				value = civic_divine_leadership
+				value = civic_chosen_of_the_shroud
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_materialist
+                value = ethic_materialist
+                value = ethic_fanatic_materialist
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		all_technology_research_speed = 0.25
+		planet_researchers_upkeep_mult = -0.1
+ 
+	}
+}
+
+### spiritualist
+
+civic_chosen_of_the_shroud = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_shroudwalkers.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Protectors_of_nature
+				value = civic_industrial_automation
+				value = civic_ascended_navy
+				value = civic_defenders_of_eden
+				value = civic_private_monopolies
+				value = civic_worker_unions
+				value = civic_elitist_society
+				value = civic_Society_of_opportunities
+				value = civic_immigration_Haven
+				value = civic_national_purity
+				value = civic_spirit_of_liberty
+				value = civic_divine_leadership
+				value = civic_technological_mastery
+				value = civic_chosen_of_the_omnissiah
+			}
+		} 
+        ethics = {
+            OR = {
+                text = civic_tooltip_spiritualist
+                value = ethic_spiritualist
+                value = ethic_fanatic_spiritualist
+			}
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		shroud_delve_cooldown = -0.20
+		country_unity_produces_mult = 0.2
+ 
+	}
+}
+
+
+civic_ascended_hive = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_parliamentary_system.dds"
+	potential = {
+	    authority = { value = auth_hive_mind } 
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		country_war_exhaustion_mult = -0.3
+		ship_fire_rate_mult = 0.1
+		planet_stability_add = 10
+ 
+	}
+}
+
+civic_ascended_machine_core = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_machine_ota_updates.dds"
+	potential = {
+	    authority = { value = auth_machine_intelligence }  
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		country_war_exhaustion_mult = -0.3
+		ship_fire_rate_mult = 0.1
+		planet_stability_add = 10
+ 
+	}
+}
+
+
+
+##########################
+### national ambitions ###
+##########################
+
+
+civic_Architects_of_Gaia = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_idyllic_bloom.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+				value = ethic_ecocentric
+				value = ethic_fanatic_ecocentric
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		terraform_speed_mult = 1
+		terraforming_cost_mult = -0.2
+ 
+	}
+}
+
+civic_utopian_ideals = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_utopian_ideals.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_stability_add = 10
+		planet_crime_mult = -0.3
+ 
+	}
+}
+
+
+civic_mega_architects = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_nationalistic_zeal.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_anthropocentric
+				value = ethic_fanatic_anthropocentric
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		megastructure_build_speed_mult = 1
+		country_megastructure_build_cap_add = 1
+ 
+	}
+}
+
+civic_galactic_superpower = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_distinguished_admiralty.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_militarist
+				value = ethic_fanatic_militarist
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		country_naval_cap_mult = 0.3
+		ship_weapon_damage = 0.2
+ 
+	}
+}
+
+civic_industrial_espionage = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_catalytic_processing.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_militarist
+				value = ethic_fanatic_militarist
+				value = ethic_competitive
+				value = ethic_fanatic_competitive
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		add_base_country_intel = 50
+		intel_decryption_add = 10
+		intel_encryption_add = 10
+	}
+}
+
+civic_peaceful_haven = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_life_seeded.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+				value = ethic_cooperative
+				value = ethic_fanatic_cooperative
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		pop_happiness = 0.2
+		planet_crime_mult = -0.3
+ 
+	}
+}
+
+
+
+civic_galactic_diplomats = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_diplomatic_corps.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_cooperative
+				value = ethic_fanatic_cooperative
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		diplo_weight_mult = 0.50
+		envoys_add = 2
+ 
+	}
+}
+
+
+civic_covert_state = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_shadow_council.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_elitist
+				value = ethic_fanatic_elitist
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		intel_encryption_add = 30
+		planet_stability_add = 10
+ 
+	}
+}
+
+civic_beacon_of_prosperity = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_beacon_of_liberty.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_pluralist
+				value = ethic_fanatic_pluralist
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_jobs_worker_produces_mult = 0.2
+		planet_jobs_consumer_goods_produces_mult = 0.2
+		diplo_weight_economy_mult = 1.0
+ 
+	}
+}
+
+
+civic_society_of_equals = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_parliamentary_system.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_pluralist
+				value = ethic_fanatic_pluralist
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		pop_happiness = 0.2
+		empire_size_pops_mult = -0.10
+ 
+	}
+}
+
+
+civic_slave_masters = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_slaver_guilds.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_fanatical_mechanists
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_jobs_slave_produces_mult = 0.3
+		pop_cat_slave_political_power = -1
+ 
+	}
+}
+
+
+civic_fanatical_mechanists = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_mechanists.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_shroud_scholars
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_pop_assembly_mult = 0.15
+		ROBOT_species_trait_picks_add = 2
+		planet_jobs_robotic_produces_mult = 0.1
+ 
+	}
+}
+
+civic_shroud_scholars = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_exalted_priesthood.dds"
+	potential = {
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	possible = {
+	   civics = {
+			NOR = {
+				value = civic_Architects_of_Gaia
+				value = civic_utopian_ideals
+				value = civic_industrial_juggernaut
+				value = civic_mega_architects
+				value = civic_galactic_superpower
+				value = civic_industrial_espionage
+				value = civic_peaceful_haven
+				value = civic_capitalistic_foundation
+				value = civic_galactic_diplomats
+				value = civic_covert_state
+				value = civic_beacon_of_prosperity
+				value = civic_society_of_equals
+				value = civic_slave_masters
+				value = civic_fanatical_mechanists
+				value = civic_fanatical_mechanists_spiri
+			}
+		}
+        ethics = {
+			OR = {
+			    value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}		
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_telepaths_unity_produces_add = 3
+		pop_citizen_happiness = 0.15
+		country_unity_produces_mult = 0.25
+ 
+	}
+}
+
+
+civic_all_seeing_hive = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_hive_empath.dds"
+	potential = {
+	    authority = { value = auth_hive_mind } 
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	
+	possible = {
+        civics = {
+			NOR = {
+				value = civic_efficient_drones
+			}
+		} 
+	}
+	
+	random_weight = { base = 250 }
+	modifier = {
+		add_base_country_intel = 70
+		intel_decryption_add = 10
+		intel_encryption_add = 10
+ 
+	}
+}
+
+civic_efficient_drones = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_efficient_drones.dds"
+	potential = {
+	    authority = { value = auth_hive_mind } 
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	
+	possible = {
+        civics = {
+			NOR = {
+				value = civic_all_seeing_hive
+			}
+		} 
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		planet_jobs_simple_drone_produces_mult = 0.2
+		planet_jobs_complex_drone_produces_mult = 0.15
+ 
+	}
+}
+
+civic_all_seeing_machine = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_machine_unitary_cohesion.dds"
+	potential = {
+	    authority = { value = auth_machine_intelligence }  
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	
+	possible = {
+        civics = {
+			NOR = {
+				value = civic_efficient_drones2
+			}
+		} 
+	}
+	
+	random_weight = { base = 250 }
+	modifier = {
+		add_base_country_intel = 70
+		intel_decryption_add = 10
+		intel_encryption_add = 10
+ 
+	}
+}
+
+civic_efficient_drones2 = {
+    modification = yes
+    icon ="gfx/interface/icons/governments/civics/civic_doa_efficient_drones.dds"
+	potential = {
+	    authority = { value = auth_machine_intelligence }  
+		civics = {
+			value = civic_ascended_empire # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	
+	possible = {
+        civics = {
+			NOR = {
+				value = civic_all_seeing_machine
+			}
+		} 
+	}
+	
+	random_weight = { base = 250 }
+	modifier = {
+		planet_jobs_simple_drone_produces_mult = 0.2
+		planet_jobs_complex_drone_produces_mult = 0.15
+ 
+	}
+}
+
+
+######################
+### banished empire###
+######################
+
+
+
+civic_demilitarized = {
+    modification = no
+    icon ="gfx/interface/icons/governments/civics/negatives/civic_doa_custodian_directives.dds"
+	potential = {
+		civics = {
+			value = civic_demilitarized # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		country_naval_cap_mult = -0.5
+		starbase_shipyard_build_speed_mult = -0.5
+		country_government_civic_points_add = -3
+	}
+}
+
+
+civic_national_humiliation = {
+    modification = no
+    icon ="gfx/interface/icons/governments/civics/negatives/civic_doa_lethargic_leadership.dds"
+	potential = {
+		civics = {
+			value = civic_national_humiliation # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+	    diplo_weight_mult = -1
+		country_unity_produces_mult = -0.5
+		country_influence_produces_mult = -0.5
+		country_government_civic_points_add = -3
+	}
+}
+
+
+##########################
+### Isolationist empire###
+##########################
+
+
+civic_isolationist_ideals = {
+    modification = no
+    icon ="gfx/interface/icons/governments/civics/civic_doa_parliamentary_system.dds"  ####PLACEHOLDER
+	potential = {
+		civics = {
+			value = civic_isolationist_ideals # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+		starbase_defense_platform_capacity_add = 24
+		starbase_defensive_war_ship_build_speed_mult = 0.25
+	}
+}
+
+
+civic_secured_borders = {
+    modification = no
+    icon ="gfx/interface/icons/governments/civics/civic_doa_worker_unions.dds"  ####PLACEHOLDER
+	potential = {
+		civics = {
+			value = civic_secured_borders # Added via event - this trigger prevents the civic from being picked
+		}
+	}
+	random_weight = { base = 250 }
+	modifier = {
+	    planet_stability_add = 10
+		pop_citizen_happiness = 0.15
+		ship_home_territory_fire_rate_mult = 0.2
+		local_trade_protection_add = 20
+		
+	}
+}
+

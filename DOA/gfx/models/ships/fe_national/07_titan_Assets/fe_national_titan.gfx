@@ -1,0 +1,29 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_titan_mesh"
+		file = "gfx/models/ships/fe_national/07_titan_Assets/fe_national_titan.mesh"
+		scale = 1.0
+
+		animation = { id = "idle"		type = "fallen_empire_titan_idle_animation" }
+		animation = { id = "death"		type = "fallen_empire_titan_death_animation" }
+
+		meshsettings = {
+			name = "polySurface17Shape"
+			index = 0
+			texture_diffuse = "ascendant_01_civilian_diffuse.dds"
+			texture_normal = "ascendant_empire_civilian_normal.dds"
+			texture_specular = "ascendant_empire_civilian_specular.dds"
+			shader = "PdxMeshShip"
+		}
+
+		meshsettings = {
+			name = "polySurface17Shape"
+			index = 1
+			texture_diffuse = "ascendant_01_stations_diffuse.dds"
+			texture_normal = "ascendant_empire_stations_normal.dds"
+			texture_specular = "ascendant_empire_stations_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}
