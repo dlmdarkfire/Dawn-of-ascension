@@ -345,7 +345,7 @@ doa_dark_matter_pylon_3 = {
 	category = resource
 	
 	prerequisites = {
-	"tech_doa_dark_matter_pylon_3"
+	"tech_dark_matter_pylon_3"
 	}
 	
 	potential = {

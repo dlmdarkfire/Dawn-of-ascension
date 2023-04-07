@@ -12,5 +12,5 @@ tags={
 	"Technologies"
 }
 name="Dawn Of Ascension"
-supported_version="3.7.2"
+supported_version="3.7.4"
 remote_file_id="2816360131"
