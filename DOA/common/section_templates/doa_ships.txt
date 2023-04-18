@@ -5,7 +5,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "feescort_bow_entity"
 	icon = "GFX_ship_part_core_mid"
-	ai_tags = { artillery artillery_stealth }
+	ai_tags = { screen gunship }
 	
 	ai_weight = {
 		modifier = {
@@ -29,7 +29,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 30
+			alloys = 20
 		}
 	}
 }
@@ -41,22 +41,17 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "feescort_bow_entity"
 	icon = "GFX_ship_part_core_mid"
-	ai_tags = { explosive explosive_stealth  }
+	ai_tags = { explosive explosive_stealth }
 	
 	ai_weight = {
 		modifier = {
 			factor = 10.0
-			OR = {
-				is_preferred_weapons = weapon_type_kinetic
-				is_preferred_weapons = weapon_type_energy
-			}
+			is_preferred_weapons = weapon_type_explosive
 		}
 		modifier = {
 			factor = 0.1
-			NOR = {
 				is_preferred_weapons = weapon_type_kinetic
 				is_preferred_weapons = weapon_type_energy
-			}
 		}
 	}
 
@@ -76,7 +71,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 30
+			alloys = 20
 		}
 	}
 }
@@ -89,7 +84,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "feescort_stern_entity"
 	icon = "GFX_ship_part_core_mid"
-	ai_tags = { explosive explosive_stealth artillery artillery_stealth }
+	ai_tags = { explosive explosive_stealth screen gunship }
 
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -117,7 +112,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 30
+			alloys = 20
 		}
 	}
 }
@@ -129,7 +124,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "feescort_stern_entity"
 	icon = "GFX_ship_part_core_mid"
-	ai_tags = { explosive explosive_stealth artillery artillery_stealth }
+	ai_tags = { explosive explosive_stealth screen gunship }
 
 	component_slot = {
 		name = "PD_01"
@@ -157,7 +152,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 30
+			alloys = 20
 		}
 	}
 }
@@ -173,6 +168,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "febattlecruiser_bow_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_tags = { explosive gunship artillery  }
 	
 	ai_weight = {
 		modifier = {
@@ -208,7 +204,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 60
+			alloys = 40
 		}
 	}
 }
@@ -220,6 +216,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "febattlecruiser_mid_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_tags = { gunship artillery  }
 	
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -239,7 +236,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 60
+			alloys = 40
 		}
 	}
 }
@@ -251,6 +248,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "febattlecruiser_mid_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_tags = { explosive }
 	
 	component_slot = {
 		name = "TORPEDO_01"
@@ -278,7 +276,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 60
+			alloys = 40
 		}
 	}
 }
@@ -290,6 +288,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "febattlecruiser_stern_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_tags = { explosive gunship artillery  }
 	
 	component_slot = {
 		name = "MEDIUM_GUN_01"
@@ -316,7 +315,7 @@ ship_section_template = {
 	resources = {
 		category = ship_sections
 		cost = {
-			alloys = 60
+			alloys = 40
 		}
 	}
 }

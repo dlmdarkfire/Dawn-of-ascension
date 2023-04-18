@@ -54,17 +54,7 @@ feescort = {
 	enable_3dview_in_ship_browser = yes
 	
 	default_behavior = picket
-	ship_roles = { explosive artillery }
-	triggered_ship_roles = {
-		{
-			name = artillery_stealth
-			trigger = { has_technology = tech_cloaking_dark_matter }
-		}
-		{
-			name = explosive_stealth
-			trigger = { has_technology = tech_cloaking_dark_matter }
-		}
-	}
+	ship_roles = { explosive screen gunship }
 	prerequisites = { "tech_ascended_escort" }
 	
 	combat_disengage_chance = 1.5
@@ -140,6 +130,7 @@ febattlecruiser = {
 	enable_3dview_in_ship_browser = yes
 	
 	default_behavior = artillery
+	ship_roles = { explosive gunship artillery  }
 	prerequisites = { "tech_ascended_battlecruiser" }
 	
 	combat_disengage_chance = 1.0

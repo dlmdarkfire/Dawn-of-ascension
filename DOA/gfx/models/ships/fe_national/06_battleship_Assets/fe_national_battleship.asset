@@ -49,6 +49,7 @@ entity = {
 entity = {
 	name = "fe_national_battleship_bow_M1S2SHB_entity"
 	pdxmesh = "fe_national_battleship_bow_vanilla_mesh"
+	locator = { name = "strike_craft_locator_01" position = { 0 0 0 } }
 	
 	
 }

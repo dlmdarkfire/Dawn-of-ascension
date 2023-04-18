@@ -21,7 +21,7 @@ country_event = {
 	id = banished_empire.2
 	title = banished_empire.2.name
 	desc = banished_empire.2.desc
-	picture = GFX_evt_burning_city
+	picture = GFX_evt_death_from_above
 	show_sound = event_planetary_riot
 	location = from
 		
@@ -32,7 +32,7 @@ country_event = {
                        limit = {
                             is_capital = yes
                     }
-						add_planet_devastation = 50
+						add_planet_devastation = 100
 		}
 	}
 	
@@ -53,7 +53,6 @@ country_event = {
 				civics = {
 				  civic = civic_corvee_system
 					civic = civic_demilitarized
-					civic = civic_social_chaos
 					civic = civic_national_humiliation
 				}
 			}	
@@ -113,7 +112,6 @@ country_event = {
 	   set_country_flag = ascended_empire
 	   remove_country_flag = banished_empire
 	   force_remove_civic = civic_demilitarized
-	   force_remove_civic = civic_social_chaos
 	   force_remove_civic = civic_national_humiliation
 	   force_add_civic = civic_ascended_empire
 	   set_timed_country_flag = { flag = re_ascended_empire days = 3600 }

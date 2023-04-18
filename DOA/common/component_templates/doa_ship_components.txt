@@ -12,6 +12,7 @@ utility_component_template = {
 			alloys = 20
 		}
 	}
+	ai_tags = { explosive }
 	class_restriction = { shipclass_military }
 	size_restriction = { feescort }
 	component_set = "combat_computers"
@@ -41,6 +42,7 @@ utility_component_template = {
 			alloys = 20
 		}
 	}
+	ai_tags = { screen }
 	class_restriction = { shipclass_military }
 	size_restriction = { feescort }
 	component_set = "combat_computers"
@@ -70,6 +72,7 @@ utility_component_template = {
 			alloys = 20
 		}
 	}
+	ai_tags = { gunship }
 	class_restriction = { shipclass_military }
 	size_restriction = { feescort }
 	component_set = "combat_computers"
@@ -79,34 +82,6 @@ utility_component_template = {
 	ship_modifier = {
 		ship_fire_rate_mult = 0.20
 		ship_accuracy_add = 20
-	}
-	
-	ai_weight = {
-		weight = 5
-	}	
-}
-
-utility_component_template = {
-	key = "feescort_COMBAT_COMPUTER_4"
-	size = small
-	icon = "GFX_ship_part_computer_artillery_sapient"
-	icon_frame = 1
-	power = -25
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 20
-		}
-	}
-	class_restriction = { shipclass_military }
-	size_restriction = { feescort }
-	component_set = "combat_computers"
-	ship_behavior = "artillery"
-	
-		
-	ship_modifier = {
-		ship_fire_rate_mult = 0.20
-		ship_weapon_range_mult = 0.20
 	}
 	
 	ai_weight = {
@@ -130,6 +105,7 @@ utility_component_template = {
 			alloys = 20
 		}
 	}
+	ai_tags = { explosive gunship }
 	class_restriction = { shipclass_military }
 	size_restriction = { febattlecruiser }
 	component_set = "combat_computers"
@@ -158,6 +134,7 @@ utility_component_template = {
 			alloys = 20
 		}
 	}
+	ai_tags = { artillery  }
 	class_restriction = { shipclass_military }
 	size_restriction = { febattlecruiser }
 	component_set = "combat_computers"

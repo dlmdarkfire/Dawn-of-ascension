@@ -27,11 +27,11 @@ ap_galactic_ascendancy = {
 			has_technology = tech_mega_engineering
 		}
 		custom_tooltip = {
-			fail_text = "requires_independence"
+			fail_text = requires_independence
 			is_subject = no
 		}
         custom_tooltip = {
-		    fail_text "Ascension started"
+		    fail_text = Ascension_started
 			NOT = { 
 		    has_country_flag = ascension_started
 		    }

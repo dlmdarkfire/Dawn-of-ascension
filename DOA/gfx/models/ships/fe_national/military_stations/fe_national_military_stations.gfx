@@ -1,0 +1,20 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_military_station_small_mesh"
+		file = "gfx/models/ships/fe_national/military_stations/fe_national_military_station_small.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_military_station_medium_mesh"
+		file = "gfx/models/ships/fe_national/military_stations/fe_national_military_station_medium.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_military_station_large_mesh"
+		file = "gfx/models/ships/fe_national/military_stations/fe_national_military_station_large.mesh"
+		scale = 1.0
+	}
+}

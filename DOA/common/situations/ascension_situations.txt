@@ -154,5 +154,12 @@ situation_galactic_ascendancy = {
 				}
 			}
 		}
+		modifier = {
+			add = 50
+			desc = situation_galactic_ascendancy_cheat
+			owner = {
+			        has_country_flag = doa_situation_testing	
+			}
+		}
 	}
 }	

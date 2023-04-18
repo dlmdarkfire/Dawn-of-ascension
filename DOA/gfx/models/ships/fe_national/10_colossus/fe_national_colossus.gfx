@@ -1,9 +1,18 @@
 objectTypes = {
-	
+	pdxmesh = {
+		name = "fe_national_colossus_energy_mesh"
+		file = "gfx/models/ships/colossus/fallen_empire_01/fallen_empire_01_colossus_energy.mesh"
+		
+		animation = { id = "idle"			type = "fallen_empire_01_colossus_energy_idle_animation" }
+
+		meshsettings = {
+			texture_diffuse = "ascendant_01_colossus_energy.dds"
+		}
+	}
 	
 	pdxmesh = {
-		name = "fe_national_01_colossus_mesh"
-		file = "gfx/models/ships/fe_national/10_colossus/fe_national_01_colossus.mesh"
+		name = "fe_national_colossus_mesh"
+		file = "gfx/models/ships/colossus/fallen_empire_01/fallen_empire_01_colossus.mesh"
 		
 		animation = { id = "idle"			type = "fallen_empire_01_colossus_idle_animation" }
 		animation = { id = "open"			type = "fallen_empire_01_colossus_open_animation" }

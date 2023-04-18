@@ -1,0 +1,8 @@
+starbase_redesign_project_finished = {
+	starbase_building_build_speed_mult = 1
+	starbase_module_build_speed_mult = 1
+	starbase_shipyard_build_speed_mult = -0.7
+	country_naval_cap_add = 2000
+	icon = "gfx/interface/icons/planet_modifiers/pm_ruined_system.dds"
+	icon_frame = 1
+}

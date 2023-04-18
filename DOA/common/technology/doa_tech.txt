@@ -190,7 +190,7 @@ tech_ascended_ships = {
 	
 	modifier = {
 		ship_weapon_damage = 0.2
-		ship_hull_mult = 0.2
+		ship_hull_mult = 0.3
 		starbase_shipyard_build_speed_mult = -0.1
 		ships_upkeep_mult = 0.1
 	}
@@ -215,8 +215,17 @@ tech_ascended_base_ships = {
 	}
 	
 	modifier = {
-		ship_speed_mult = 0.25
-		ships_upkeep_mult = -0.25
+		shipsize_corvette_build_speed_mult = 0.25
+		shipsize_frigate_build_speed_mult = 0.25
+		shipsize_destroyer_build_speed_mult = 0.25
+		shipsize_cruiser_build_speed_mult = 0.25
+		shipsize_battleship_build_speed_mult = 0.25
+		shipsize_titan_build_speed_mult = 0.25
+		shipsize_juggernaut_build_speed_mult = 0.25
+		ship_corvette_cost_mult = -0.1
+		ship_destroyer_cost_mult = -0.1
+		ship_cruiser_cost_mult = -0.1
+		ship_battleship_cost_mult = -0.1
 	}
 	
 	ai_weight = {
@@ -244,6 +253,39 @@ tech_ascended_hulls = {
 	}
 }
 
+tech_cities_in_the_skies = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { statecraft }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_accepted_ships
+	}
+	
+	modifier = {
+		planet_districts_upkeep_mult = -0.05
+		planet_districts_cost_mult = 0.05
+	}
+}
+
+tech_ascended_starbase_design = {
+	area = engineering
+	cost = 0
+	tier = 0
+	category = { materials }
+	weight = 0
+	
+	potential = {
+	   has_country_flag = doa_accepted_ships
+	}
+	
+	modifier = {
+		shipclass_starbase_damage_mult = 0.25
+		shipclass_starbase_hull_mult = 0.25
+	}
+}
 
 
 ####################
@@ -259,6 +301,9 @@ tech_ascended_escort = {
 	
 	potential = {
         has_technology = tech_ascended_ships
+		NOT = {
+		has_global_flag = acot_activated
+		}
 	}
 
     prereqfor_desc = {
@@ -284,6 +329,9 @@ tech_ascended_battlecruiser = {
 	
 	potential = {
         has_technology = tech_ascended_ships
+		NOT = {
+		has_global_flag = acot_activated
+		}
 	}
 
     prereqfor_desc = {
@@ -689,7 +737,6 @@ tech_escort_build_speed = {
 
 	modifier = {
 		custom_tooltip = tech_escort_build_speed_effect
-		ship_feescort_cost_mult = -0.1
 		shipsize_feescort_build_speed_mult = 0.25
 	}
 
@@ -728,7 +775,6 @@ tech_battlecruiser_build_speed = {
 
 	modifier = {
 		custom_tooltip = tech_battlecruiser_build_speed_effect
-		ship_febattlecruiser_cost_mult = -0.1
 		shipsize_febattlecruiser_build_speed_mult = 0.25
 	}
 
@@ -913,7 +959,7 @@ tech_affluence_center_1 = {
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_materials"
-			}
+            }
 		}
 	}
 }

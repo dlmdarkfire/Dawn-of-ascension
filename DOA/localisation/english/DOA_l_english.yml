@@ -1,5 +1,14 @@
 ﻿l_english:
  
+ ### pop modifier
+ mod_planet_researchers_minor_artifacts_produces_add:0 "£minor_artifacts£ Minor Artifacts from reseachers"
+ 
+ ### modifiers
+ starbase_redesign_project_finished:0 "Starbase Redesign Completed"
+ 
+ 
+ 
+ 
  #### scripted modifier
  mod_doa_automated_industries_count:0 "Automated Industries Capacity"
  
@@ -26,7 +35,9 @@
  banished_empire.5.name:0 "Treaty Concluded"
  banished_empire.5.desc:0 "Our demilitarization is at an end! We are finally able to rebuild our fleets and move forwards. Furthermore, our overlord failed to uncover a hidden bunker with the advanced designs from our ascendancy. It is high time we put them to use."
  banished_empire.5.a:0 "We rise again"
- 
+ is_at_war:0 "Is at war"
+ has_been_banished:0 "We've been banished"
+ has_just_ascended:0 "Recently ascended"
  
  
  ### Decisions
@@ -57,7 +68,7 @@
  tech_ascended_arcology:0 "Better arcology blueprints"
  tech_ascended_arcology_desc:0 "With improved understanding of these enormous projects, we can standardize construction patterns for rapid development."
  tech_ascended_buildings:0 "Theory Of Automated Industries"
- tech_ascended_buildings_desc:0 "Using an advanced form of dark matter manipulation, the precursors technological mastery enabled entire industries to run autonomously. .\n\nIf we apply our newly gained studies on dark matter, we might be able to replicate similar marvels of engineering"
+ tech_ascended_buildings_desc:0 "With our newfound understanding of dark matter and scans of old precursor ruins, the first schematics for automated industries has been created"
  tech_ascended_ships:0 "Precursor Ship Designs"
  tech_ascended_ships_desc:0 "After years of research and engineering projects, we have at long last obtained fully working designs inspired by the precursors, these ships are far more versitle than the common designs we've been using."
  tech_ascended_base_ships:0 "Updated Ship Designs"
@@ -72,6 +83,10 @@
  tech_ascended_machine_world_desc:0 "With our newly gained knowledge, whole planets can be turned into an extensions of our machine intelligence."
  tech_ascended_terraforming_projects:0 "Precursor Terraforming"
  tech_ascended_terraforming_projects_desc:0 "Newly gained blueprints will allow us to terraform planets far faster than we thought possible."
+ tech_cities_in_the_skies:0 "Cities In The Skies"
+ tech_cities_in_the_skies_desc:0 "Dark matter infused anti-gravity generators allow entire cities to seemingly float above the planet surface"
+ tech_ascended_starbase_design:0 "Ascended starbase construction"
+ tech_ascended_starbase_design_desc:0 "Focus on starbase construction has led to advancement in starbase design"
  
  #### ship unlocks
  tech_ascended_escort:0 "Escort blueprints"
@@ -119,6 +134,8 @@
  mod_shipsize_febattlecruiser_build_speed_mult:0 "Battlecruiser Build Speed"
  tech_escort_build_speed_effect:0 "$mod_ship_feescort_cost_mult$: §G-10%§!\n$mod_shipsize_feescort_build_speed_mult$: §G+25%§!"
  tech_battlecruiser_build_speed_effect:0 "$mod_ship_febattlecruiser_cost_mult$: §G-10%§!\n$mod_shipsize_febattlecruiser_build_speed_mult$: §G+25%§!"
+ mod_shipsize_titan_build_speed_mult:0 "Titan Build Speed"
+ mod_shipsize_juggernaut_build_speed_mult:0 "Juggernaut Build Speed"
  
  
  #### Building unlocks
@@ -266,14 +283,14 @@
  civic_Architects_of_Gaia:0 "Architects Of Gaia"
  civic_Architects_of_Gaia_desc:0 "This society uses vast resources to terraform the galaxy in their image.\n§RNational Focus§!"
  civic_utopian_ideals:0 "Utopian Ideals"
- civic_utopian_ideals_desc:0 "A true utopia for all"
+ civic_utopian_ideals_desc:0 "A true utopia for all. \n§RNational Focus§!"
  civic_industrial_juggernaut:0 "Industrial Juggernaut"
  civic_industrial_juggernaut_desc:0 "This empire is determented to be the galaxies biggest industrial powerhouse.\n§RNational Focus§!"
  civic_mega_architects:0 "Mega Architects"
  civic_mega_architects_desc:0 "These people use most of their resources for massive constructs.\n§RNational Focus§!"
  civic_galactic_superpower:0 "Galactic Superpower"
  civic_galactic_superpower_desc:0 "This civilisation sees themselves as one of the galaxies superpowers.\n§RNational Focus§!"
- civic_industrial_espionage:0 "Industrial Espionage"
+ civic_industrial_espionage:0 "Galactic Spymasters"
  civic_industrial_espionage_desc:0 "Spying is done on such a large scale that it's one of the biggest industries.\n§RNational Focus§!"
  civic_peaceful_haven:0 "Peaceful Haven"
  civic_peaceful_haven_desc:0 "A save and peaceful society.\n§RNational Focus§!"
@@ -303,6 +320,9 @@
  civic_all_seeing_machine_desc:0 "Through unknown means, this machine has achieved the ability to see everything.\n§RNational Focus§!"
  civic_efficient_drones2:0 "Efficient Drones"
  civic_efficient_drones2_desc:0 "Drones working on peak efficiency.\n§RNational Focus§!"
+ 
+ 
+ ##### banished and isolationist empires
  civic_demilitarized:0 "Demilitarized"
  civic_demilitarized_desc:0 "Through a harsh treaty, this empire has been completely demilitarized."
  civic_national_humiliation:0 "National Humiliation"
@@ -335,7 +355,7 @@
  doa_affluence_center_3:0 "Spire of Luxury"
  doa_affluence_center_3_desc:0 "A place that is so lavish that it puts the rest of the galaxy to shame."
  doa_nourishment_center_1:0 "Nourishment Center"
- doa_nourishment_center_1_desc:0 "If it exists as a flavor, it can be replicated here.
+ doa_nourishment_center_1_desc:0 "If it exists as a flavor, it can be replicated here."
  doa_nourishment_center_2:0 "Gastronome Center"
  doa_nourishment_center_2_desc:0 "With a grand catalogue, any of the galaxy's food can be replicated here."
  doa_nourishment_center_3:0 "Epicurean Center"
@@ -373,7 +393,7 @@
  desc_ascended_empire:0 "\nAt the Dawn Of Ascension, our citizens are united by the great ideals of our nation. Becoming an ascended empire will grant us access to technological wonders and civics exceeding even the great great empires that came before."
  requires_dark_matter_power:0 "$TRIGGER_FAIL$Requires §Y$tech_dark_matter_power_core$§!."
  requires_ascension_theory:0 "$TRIGGER_FAIL$Requires §Y$tech_ascension_theory$§!."
- Ascension started:0 "$TRIGGER_FAIL$ §YYou've already started your ascension§!."
+ Ascension_started:0 "$TRIGGER_FAIL$§YYou've already started your ascension§!."
  
  
  #### artifact stuff
@@ -413,6 +433,7 @@
  situation_galactic_ascendancy_monthly_change_tooltip:0 "Ascendancy is within reach"
  situation_galactic_ascendancy_has_alpha:0 "Has Alpha"
  situation_galactic_ascendancy_has_delta:0 "Has Delta"
+ situation_galactic_ascendancy_cheat:0 "cheater"
  ascension_event.1.name:0 "The Dawn Of Ascension"
  ascension_event.1.desc:0 "From the day our ancestors on §H[From.GetHomeWorldName]§! first gazed upon the vastness of the universe, we have dreamt of living amongst the stars. The §H[From.GetSpeciesName]§! have persevered through countless trials. Despite our internal conflicts, our differences have never outweighed our common interests. Now our shared values have brought us to the Dawn of Ascension. We will learn from the trials of the precursors, and ascend beyond those that came before. This is our destiny, our ascension."
  ascension_event.1.desc.1:0 "From the day we reached the singularity on §H[From.GetHomeWorldName]§!, and gazed upon the infinite frontiers of space, we dreamt of spreading our consciousness throughout the stars. The §H[From.GetSpeciesName]§! have persevered through countless trials. We have overcome the challenges of starfaring outsiders, sacrificing many drones for the advancement of the hive. Now our collective strength has brought us to the Dawn of Ascension. We will learn from the trials of the precursors, and ascend beyond those that came before. This is our destiny."
@@ -425,7 +446,7 @@
  ascension_event.2.a:0 "We will reshape the stars"
  ascension_event.3.name:0 "The Art Of Espionage"
  ascension_event.3.desc:0 "Analysis of precursor outposts and sensor arrays have provided new insights into novel forms of stealth technology and signal processing hardware. Our research teams are confident that our covert operations teams will put these insights to good use."
- ascension_event.3.a:0 "You cannot hack what you cannot see"
+ ascension_event.3.a:0 "An age of stealth is upon us"
  ascension_event.4.name:0 "The Age Of Dark Matter"
  ascension_event.4.desc:0 "Evidence of extensive use of dark matter abounds in precursor designs, but our physics teams have long been at a loss on how to harness such power. Fortunately, a derelict dark matter harvesting plant has finally provided us with an answer, and our research teams suggest that this is just the beginning."
  ascension_event.4.a: "How far can dark matter really go?"
@@ -461,6 +482,29 @@
  ascension_event.15.a:0 "A new power is rising"
  ascension_event.11.name:0 "Ai ascension"
  ascension_event.11.desc:0 "sussy, stop checking my LOC"
+ ascension_event.17.name:0 "Precursor City Designs"
+ ascension_event.17.desc:0 "The floating cities of the ancient precursors have long been a mystery to us, but no longer. We've obtained the designs used for these gravity defying cities, should we adopt these designs we would surely save energy on upkeep, though with more cost upfront for the gigantic dark matter reactors powering the anti-gravity generators. Which design should we choose?"
+ ascension_event.17.a:0 "Spiritualist Design"
+ ascension_event.17.b:0 "Materialist Design"
+ ascension_event.17.c:0 "Xenophile Design"
+ ascension_event.17.d:0 "Xenophobe Design"
+ ascension_event.17.e:0 "Hive Design"
+ ascension_event.17.f:0 "Machine Design"
+ ascension_event.17.g:0 "We will not remake our cities"
+ ascension_event.18.name:0 "Precursor Room Design"
+ ascension_event.18.desc:0 "The room our leaders chose to represent us the moment we took the first step towards the stars, is no longer a representation of our might in this galaxy. A multitude of precursor rooms have been proposed, which should we choose?"
+ ascension_event.18.a:0 "Cyan"
+ ascension_event.18.b:0 "Orange"
+ ascension_event.18.c:0 "Red"
+ ascension_event.18.d:0 "Teal"
+ ascension_event.18.e:0 "Yellow"
+ ascension_event.18.f:0 "Blue"
+ ascension_event.18.g:0 "Gilded"
+ ascension_event.18.h:0 "Our current room represents us well enough"
+ ascension_event.19.name:0 "Starbase Redesign Project"
+ ascension_event.19.desc:0 "Admired by some, feared by others, our new precursor inspired designs have proven themselves worthy to the galaxy, but a blight remains on our great empire. The starbases of old still remains as they were when we first reached the frontiers of space. Our engineers have proposed a redesign project, focusing solely on remaking all starbases in our empire but with the cost of postponing ship production. The redesign will make us lose any modules and buildings installed, but the focus on starbase building will make us reinstall them in no time. Should we proceed with the upgrade?"
+ ascension_event.19.a:0 "Proceed"
+ ascension_event.19.b:0 "We do not have the time for this"
  
  
  
@@ -542,7 +586,7 @@
  renounce_event.9.desc:0 "Today marks the beginning of a new era in galactic history. \n\n§H[Root.GetRulerTitle]  [Root.GetRulerName]§! has renounced their ascendancy to the galactic community. The speech stated that they lost interest in galactic politics and have no further interests in expanding their empire or their influence across the galaxy at all. They have achieved what they set out for, the age of dark matter was achieved. While they won't go into total isolation. Wars of conquest and pesky claims will be in the past. History will remember them as those that retreated for the good of the galaxy, uncaring of what lies beyond their own borders."
  renounce_event.9.a:0 "Cowards"
  renounce_event.10.name:0 "Reborn Galactic Ascendancy"
- renounce_event.10.desc:0 "The §H[From.GetName]§! Have been reborn as a galactic ascendancy. Once again they now rival the other powers of the galaxy.
+ renounce_event.10.desc:0 "The §H[From.GetName]§! Have been reborn as a galactic ascendancy. Once again they now rival the other powers of the galaxy."
  renounce_event.10.a:0 "What will this mean for us?"
  renounce_event.8.name:0 "We have been reborn!"
  renounce_event.8.desc:0 "A now era for the galaxy has begun, we, the §H[Root.GetName]§! has been reborn into a new galactic ascendancy, our citizens are united under the common goal once again. Our ascension, is final"

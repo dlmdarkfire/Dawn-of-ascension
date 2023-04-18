@@ -61,9 +61,7 @@ utility_component_template = {
 	prerequisites = { "tech_cloaking_dark_matter" }
 	component_set = "CLOAKING_DARK_MATTER"
 	ai_tags = {
-		gunship_stealth
 		explosive_stealth
-		screen_stealth
 	}
 	ai_weight = {
 		weight = @dark_matter_cloaking_weight

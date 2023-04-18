@@ -50,6 +50,9 @@ country_event = {
 		NOT = {
 		has_country_flag = dark_matter_research_accepted
 		}
+		NOT = {
+		has_country_flag = dark_matter_situation_research_started
+		}
 		NOT = { 
 		has_technology = tech_dark_matter_power_core 
 		}
@@ -226,6 +229,7 @@ country_event = {
 	
 	immediate = {
 		owner = {
+		 set_country_flag = dark_matter_situation_research_started
 			if = {
 			    start_situation = {
 					type = situation_gaining_dark_matter
@@ -316,40 +320,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = doa.9
-	title = doa.9.name
-	picture = GFX_evt_analyzing_artifacts
-	location = from
-	is_triggered_only = yes
-
-	desc = {
-	  trigger = {
-	       NOR = {
-		      has_authority = auth_hive_mind
-		      has_authority = auth_machine_intelligence
-			  }
-		}
-        text = doa.9.desc
-	}
-	
-	desc = {
-	  trigger = {
-	    has_authority = auth_hive_mind
-		}
-		text = doa.9.desc.1
-	}	
-	desc = {
-	  trigger = {
-	    has_authority = auth_machine_intelligence
-		}
-		text = doa.9.desc.2
-	}
-
-	option = {
-		name = doa.9.a		
-	}
-}
 
 
 country_event = {
@@ -441,6 +411,9 @@ country_event = {
 		}
 		NOT = { 
 		has_country_flag = dark_matter_research_refused
+		}
+		NOT= {
+		has_country_flag = dark_matter_situation_research_started
 		}
 		NOT = { 
 		has_technology = tech_dark_matter_power_core 
@@ -554,6 +527,7 @@ country_event = {
 	
 	immediate = {
 		owner = {
+		    set_country_flag = dark_matter_situation_research_started
 			if = {
 			    start_situation = {
 					type = situation_gaining_dark_matter
@@ -685,21 +659,6 @@ situation_event = {
     }
 }
 
-situation_event = {
-    id = doa.23
-    hide_window = yes
-   
-    is_triggered_only = yes
-
-	Immediate = { 
-	    owner = { 
-		   country_event = { id = doa.9
-		   scopes = { from = prev 
-		       } 
-		    } 
-	    } 
-    }
-}
 
 situation_event = {
     id = doa.24

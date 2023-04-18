@@ -34,6 +34,7 @@ country_event = {
 
 	immediate = {
 		owner = {
+		set_country_flag = ascension_started
 			if = {
 			    start_situation = {
 					type = situation_galactic_ascendancy
@@ -51,7 +52,6 @@ country_event = {
 		      has_authority = auth_machine_intelligence
 			  }
 			}  
-		 set_country_flag = ascension_started
 		 set_country_flag = doa_tech_1
 		 hidden_effect = {
 		 every_country = {					# Notify Players
@@ -69,7 +69,6 @@ country_event = {
 		 trigger = { 
 			  has_authority = auth_hive_mind
 			  }  
-		 set_country_flag = ascension_started
 		 set_country_flag = doa_tech_1
 		 hidden_effect = {
 		 every_country = {					# Notify Players
@@ -87,7 +86,6 @@ country_event = {
 		 trigger = { 
 			  has_authority = auth_machine_intelligence
 			  }  
-		 set_country_flag = ascension_started
 		 set_country_flag = doa_tech_1
 		 hidden_effect = {
 		 every_country = {					# Notify Players
@@ -156,7 +154,7 @@ situation_event = {
 				   has_technology = tech_dyson_sphere
 				}
 			}
-			give_technology = { tech = tech_ascended_mega }
+			give_technology = { tech = tech_ascended_mega message = yes }
 		}
 		}
 	}			 
@@ -179,7 +177,7 @@ situation_event = {
 		name = ascension_event.3.a
 		owner = {
 		set_country_flag = doa_tech_3
-		give_technology = { tech = tech_ascended_espionage message = no }
+		give_technology = { tech = tech_ascended_espionage message = yes }
 		}
 	}
 }
@@ -225,7 +223,7 @@ situation_event = {
 				   has_technology = tech_dark_matter_propulsion
 				}
 			}
-			give_technology = { tech = tech_ascended_shields message = no }
+			give_technology = { tech = tech_ascended_shields message = yes }
 		  }
 	   }	
 	}
@@ -247,7 +245,7 @@ situation_event = {
 		name = ascension_event.5.a
 		owner = {
 		set_country_flag = doa_tech_5
-		give_technology = { tech = tech_ascended_buildings message = no }
+		give_technology = { tech = tech_ascended_buildings message = yes }
 	   }  
 	}		
 }
@@ -271,44 +269,30 @@ country_event = {
 	}
 	
 	immediate = {
-	owner = {
-	set_country_flag = doa_tech_6
-	}
+	       owner = {
+	          set_country_flag = doa_tech_6
+	       }
 	}
 	
 	option = {
 		name = ascension_event.6.a
-		owner = {
+		set_country_flag = doa_accepted_ships
+		set_country_flag = doa_starbase_project_possible
 		add_resource = { influence = 100 }
-		give_technology = { tech = tech_ascended_ships message = no }
-		give_technology = { tech = tech_ascended_hulls message = no }
+		give_technology = { tech = tech_ascended_ships message = yes }
+		give_technology = { tech = tech_ascended_hulls message = yes }
 		hidden_effect = {
 			set_graphical_culture = fe_national
-			set_city_graphical_culture = fallen_empire_01
-		    }
-	    }
+		}	
 		ai_chance = { factor = 1000 }
-	 }  
-	 
-	 option = {
-		name = ascension_event.6.b
-		owner = {
-		add_resource = { influence = 100 }
-		give_technology = { tech = tech_ascended_ships message = no }
-		give_technology = { tech = tech_ascended_hulls message = no }
-		hidden_effect = {
-			set_graphical_culture = fe_national
-		    }
-	    }
-		ai_chance = { factor = 0 }
-	 }
+	}  
 	
 	option = {
 		name = ascension_event.6.c
 		owner = {
 		add_resource = { influence = 100 }
-		give_technology = { tech = tech_ascended_base_ships message = no }
-		give_technology = { tech = tech_ascended_hulls message = no }
+		give_technology = { tech = tech_ascended_base_ships message = yes }
+		give_technology = { tech = tech_ascended_hulls message = yes }
 	  }
 	  ai_chance = { factor = 0 }
    }
@@ -347,6 +331,7 @@ country_event = {
 		text = ascension_event.7.desc.2
 	}
 	
+	
 	option = {
 	     name = ascension_event.7.a
 		 trigger = { 
@@ -361,7 +346,7 @@ country_event = {
 			    host_has_dlc = "Megacorp"
 				has_ascension_perk = ap_arcology_project
 			}
-			give_technology = { tech = tech_ascended_arcology }
+			give_technology = { tech = tech_ascended_arcology message = yes }
 		  }
 		  
 		  if = {
@@ -371,7 +356,15 @@ country_event = {
 					has_ascension_perk = ap_arcology_project
 				}
 			}
-			give_technology = { tech = tech_ascended_arcology_project }
+			give_technology = { tech = tech_ascended_arcology_project message = yes }
+		 }
+		 if = {
+		    limit = {
+		       has_country_flag = doa_accepted_ships
+		       }
+		 hidden_effect = {
+			set_country_flag = doa_cities_in_the_sky
+		    }
 		 }
 	}
 	
@@ -385,16 +378,25 @@ country_event = {
 		    limit = {
 				has_ascension_perk = ap_hive_worlds
 			}
-            give_technology = { tech = tech_ascended_terraforming_projects }
+            give_technology = { tech = tech_ascended_terraforming_projects message = yes }
 		}
 		if = {
 		    limit = {
+			   host_has_dlc = "Utopia"
 			   NOT = {
 				has_ascension_perk = ap_hive_worlds
 			         }
 			    }	
-            give_technology = { tech = tech_ascended_hive_world }
+            give_technology = { tech = tech_ascended_hive_world message = yes }
+	    }
+		if = {
+		    limit = {
+		       has_country_flag = doa_accepted_ships
+		 }
+		 hidden_effect = {
+			set_country_flag = doa_cities_in_the_sky
 		    }
+		 }
 	}
 	
 	option = {
@@ -407,16 +409,25 @@ country_event = {
 		    limit = {
 				has_ascension_perk = ap_machine_worlds
 			}
-            give_technology = { tech = tech_ascended_terraforming_projects }
+            give_technology = { tech = tech_ascended_terraforming_projects message = yes }
 		}
 		if = {
 		    limit = {
+			   host_has_dlc = "Synthetic Dawn Story Pack"
 			   NOT = {
 				has_ascension_perk = ap_machine_worlds
 			         }
 			    }	
-            give_technology = { tech = tech_ascended_machine_world }
+            give_technology = { tech = tech_ascended_machine_world message = yes }
 	    }
+		if = {
+		    limit = {
+		       has_country_flag = doa_accepted_ships
+		 }
+		 hidden_effect = {
+			set_country_flag = doa_cities_in_the_sky
+		    }
+		 }
 	}
 }
 	
@@ -480,6 +491,14 @@ country_event = {
 	    set_government_cooldown = no
 		set_timed_country_flag = { flag = new_ascended_empire days = 7200 }
 		}
+		if = {
+		    limit = {
+		       has_country_flag = doa_accepted_ships
+		}
+		hidden_effect = {
+			country_event = { id = ascension_event.18 }
+		    }
+		}
 	}
 	
 	option = {
@@ -501,6 +520,14 @@ country_event = {
 		force_add_civic = civic_isolationist_ideals
 		force_add_civic = civic_secured_borders
 	    set_government_cooldown = no
+		}
+		if = {
+		    limit = {
+		       has_country_flag = doa_accepted_ships
+		}
+		hidden_effect = {
+			country_event = { id = ascension_event.18 }
+		    }
 		}
 	}
 }
@@ -637,4 +664,288 @@ situation_event = {
 		    } 
 	    } 
     }
+}
+
+
+#### city redesign
+country_event = {
+	id = ascension_event.17
+	title = ascension_event.17.name
+	desc = ascension_event.17.desc
+	picture = GFX_evt_city_planet
+	show_sound = event_cityscape
+	location = from
+	
+	trigger = {
+    has_country_flag = doa_cities_in_the_sky
+	}
+	
+	immediate = {
+	       owner = {
+	          remove_country_flag = doa_cities_in_the_sky
+	       }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+	     name = ascension_event.17.a
+		 owner = {
+		 give_technology = { tech = tech_cities_in_the_skies message = yes }
+		 hidden_effect = {
+			 set_graphical_culture = doa_1
+			 set_city_graphical_culture = doa_1
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.17.b
+		 owner = {
+		 give_technology = { tech = tech_cities_in_the_skies message = yes }
+		 hidden_effect = {
+			 set_graphical_culture = doa_2
+			 set_city_graphical_culture = doa_2
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.17.c
+		 owner = {
+		 give_technology = { tech = tech_cities_in_the_skies message = yes }
+		 hidden_effect = {
+			 set_graphical_culture = doa_3
+			 set_city_graphical_culture = doa_3
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.17.d
+		 owner = {
+		 give_technology = { tech = tech_cities_in_the_skies message = yes }
+		 hidden_effect = {
+			 set_graphical_culture = doa_4
+			 set_city_graphical_culture = doa_4
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.17.e
+		 owner = {
+		 give_technology = { tech = tech_cities_in_the_skies message = yes }
+		 hidden_effect = {
+			 set_graphical_culture = doa_5
+			 set_city_graphical_culture = doa_5
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.17.f
+		 owner = {
+		 give_technology = { tech = tech_cities_in_the_skies message = yes }
+		 hidden_effect = {
+			 set_graphical_culture = doa_6
+			 set_city_graphical_culture = doa_6
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.17.g
+	}
+}
+
+#####room redesign
+country_event = {
+	id = ascension_event.18
+	title = ascension_event.18.name
+	desc = ascension_event.18.desc
+	picture = GFX_evt_announcement
+	show_sound = event_cityscape
+	location = from
+	is_triggered_only = yes
+	
+	option = {
+	     name = ascension_event.18.a
+		 owner = {
+		 hidden_effect = {
+			 room_name_override = "personality_fallen_empire_cyan_room"
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.18.b
+		 owner = {
+		 hidden_effect = {
+			 room_name_override = "personality_fallen_empire_machine_room"
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.18.c
+		 owner = {
+		 hidden_effect = {
+			 room_name_override = "personality_fallen_empire_red_room"
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.18.d
+		 owner = {
+		 hidden_effect = {
+			 room_name_override = "personality_fallen_empire_teal_room"
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.18.e
+		 owner = {
+		 hidden_effect = {
+			 room_name_override = "personality_fallen_empire_yellow_room"
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.18.f
+		 owner = {
+		 hidden_effect = {
+			 room_name_override = "personality_fallen_empire_blue_room"
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.18.g
+		 owner = {
+		 hidden_effect = {
+			 room_name_override = "gilded_room"
+		     }
+	     }
+	}
+	option = {
+	     name = ascension_event.18.h
+	}
+}
+
+### starbase redesign
+country_event = {
+	id = ascension_event.19
+	title = ascension_event.19.name
+	desc = ascension_event.19.desc
+	picture = GFX_evt_fallen_empire
+	location = from
+	
+	trigger = {
+    has_country_flag = doa_starbase_project_possible
+	is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+	       owner = {
+	          remove_country_flag = doa_starbase_project_possible
+	       }
+	}
+	
+	option = {
+	     name = ascension_event.19.a
+		      owner = {
+			      every_owned_fleet = {
+				       limit = {
+				            is_ship_size = starbase_outpost
+					   }
+					   destroy_fleet = this
+				  }
+				  every_system_within_border = {   
+				       limit = {
+							NOT = {
+								exists = starbase
+							}
+				       }
+					   create_starbase = {
+							size = "starbase_outpost"
+							owner = root
+					   }
+				 }
+				 every_owned_fleet = {
+				       limit = {
+				            is_ship_size = starbase_starport
+					   }
+					   destroy_fleet = this
+				  }
+				  every_system_within_border = {   
+				       limit = {
+							NOT = {
+								exists = starbase
+							}
+				       }
+					   create_starbase = {
+							size = "starbase_starport"
+							owner = root
+					   }
+				 }
+				 every_owned_fleet = {
+				       limit = {
+				            is_ship_size = starbase_starhold
+					   }
+					   destroy_fleet = this
+				  }
+				  every_system_within_border = {   
+				       limit = {
+							NOT = {
+								exists = starbase
+							}
+				       }
+					   create_starbase = {
+							size = "starbase_starhold"
+							owner = root
+					   }
+				 }
+				 every_owned_fleet = {
+				       limit = {
+				            is_ship_size = starbase_starfortress
+					   }
+					   destroy_fleet = this
+				  }
+				  every_system_within_border = {   
+				       limit = {
+							NOT = {
+								exists = starbase
+							}
+				       }
+					   create_starbase = {
+							size = "starbase_starfortress"
+							owner = root
+					   }
+				 }
+				 every_owned_fleet = {
+				       limit = {
+				            is_ship_size = starbase_citadel
+					   }
+					   destroy_fleet = this
+				  }
+				  every_system_within_border = {   
+				       limit = {
+							NOT = {
+								exists = starbase
+							}
+				       }
+					   create_starbase = {
+							size = "starbase_citadel"
+							owner = root
+					   }
+				 }
+			     add_modifier = {
+				      modifier = starbase_redesign_project_finished
+				      days = 720
+			    }
+				give_technology = { tech = tech_ascended_starbase_design message = yes }
+		    }
+	  }
+	  
+	  option = {
+	     name = ascension_event.19.b
+	  }
 }

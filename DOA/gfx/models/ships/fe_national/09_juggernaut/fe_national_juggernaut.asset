@@ -155,27 +155,7 @@ entity = {
 }
 
 
-# ANIMATIONS
 
-animation = {
-	name = "humanoid_01_juggernaut_frame_idle_animation"
-	file = "humanoid_01_juggernaut_frame_idle.anim"
-}
-
-animation = {
-	name = "humanoid_01_juggernaut_frame_death_animation"
-	file = "humanoid_01_juggernaut_frame_death.anim"
-}
-
-animation = {
-	name = "humanoid_01_juggernaut_idle_animation"
-	file = "humanoid_01_juggernaut_idle.anim"
-}
-
-animation = {
-	name = "humanoid_01_juggernaut_death_animation"
-	file = "humanoid_01_juggernaut_death.anim"
-}
 
 
 
