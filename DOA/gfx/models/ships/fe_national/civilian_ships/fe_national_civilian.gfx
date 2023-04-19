@@ -13,9 +13,9 @@ objectTypes = {
 		meshsettings = {
 			name = "polySurface19Shape"
 			index = 0
-			texture_diffuse = "fventship_08_diffuse.dds"
-			texture_normal = "eventship_08_normal.dds"
-			texture_specular = "eventship_08_specular.dds"
+			texture_diffuse = "fe_national_science_diffuse.dds"
+			texture_normal = "fe_national_science_normal.dds"
+			texture_specular = "fe_national_science_specular.dds"
 			shader = "PdxMeshShip"
 			}
 	}

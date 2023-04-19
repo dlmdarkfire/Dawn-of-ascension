@@ -1,0 +1,26 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "fe_national_habitat_frame_mesh"
+		file = "gfx/models/ships/fe_national/megastructures/habitat/fe_national_habitat_frame.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_habitat_phase_01_mesh"
+		file = "gfx/models/ships/fe_national/megastructures/habitat/fe_national_habitat_phase_01.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_habitat_phase_02_mesh"
+		file = "gfx/models/ships/fe_national/megastructures/habitat/fe_national_habitat_phase_02.mesh"
+		scale = 1.0
+	}
+
+	pdxmesh = {
+		name = "fe_national_habitat_phase_03_mesh"
+		file = "gfx/models/ships/fe_national/megastructures/habitat/fe_national_habitat_phase_03.mesh"
+		scale = 1.0
+	}
+}

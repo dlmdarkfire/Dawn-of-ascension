@@ -1,0 +1,83 @@
+entity = {
+	name = "fe_national_habitat_core"
+	pdxmesh = "fe_national_habitat_phase_01_mesh"
+}
+
+entity = {
+	name = "fe_national_habitat_ring_01"
+	pdxmesh = "fe_national_habitat_phase_02_mesh"
+}
+
+entity = {
+	name = "fe_national_habitat_ring_02"
+	pdxmesh = "fe_national_habitat_phase_03_mesh"
+}
+
+entity = {
+	name = "fe_national_habitat_phase_01_entity"
+	pdxmesh = "fe_national_habitat_frame_mesh"
+	
+	attach = { "habitat_main" = "fe_national_habitat_core" }
+			
+	scale = 1
+	
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" looping = yes }
+	state = { name = "construction" looping = yes }
+	
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 5.0
+	}
+	
+	meshsettings = {
+		shader = "PdxMeshShip"
+	}
+}
+
+entity = {
+	name = "fe_national_habitat_phase_02_entity"
+	pdxmesh = "fe_national_habitat_frame_mesh"
+	
+	attach = { "habitat_main" = "fe_national_habitat_core" }
+	attach = { "habitat_main" = "fe_national_habitat_ring_01" }
+			
+	scale = 1
+	
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" looping = yes }
+	state = { name = "construction" looping = yes }
+	
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 5.0
+	}
+	
+	meshsettings = {
+		shader = "PdxMeshShip"
+	}
+}
+
+entity = {
+	name = "fe_national_habitat_phase_03_entity"
+	pdxmesh = "fe_national_habitat_frame_mesh"
+	
+	attach = { "habitat_main" = "fe_national_habitat_core" }
+	attach = { "habitat_main" = "fe_national_habitat_ring_01" }
+	attach = { "habitat_main" = "fe_national_habitat_ring_02" }
+			
+	scale = 1
+	
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" looping = yes }
+	state = { name = "construction" looping = yes }
+	
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 5.0
+	}
+	
+	meshsettings = {
+		shader = "PdxMeshShip"
+	}
+}

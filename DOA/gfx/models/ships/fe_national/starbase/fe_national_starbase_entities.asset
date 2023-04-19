@@ -381,7 +381,7 @@ entity = {
 
 entity = {
 	name = "fe_national_ion_cannon_section_entity"
-	pdxmesh = "ascendant_ion_cannon_mesh"
+	pdxmesh = "fe_national_ion_cannon_mesh"
 	scale = 1
 	locator = { name = "xl_gun_01" position = { 0 0 0 } }
 
@@ -460,4 +460,34 @@ entity = {
 entity = {
 	name = "fe_national_orbital_station_science_section_entity"
 	locator = { name = "turret_muzzle_01" 	position = { 0 0 0 } }
+}
+
+entity = {
+	name = "fe_national_mining_station_entity"
+	pdxmesh = "fe_national_station_small_mesh"
+	
+	locator = { name = "part1" 			position = { 0 0 0 } }
+
+	scale = 1.0
+		
+}
+
+entity = {
+	name = "fe_national_research_station_entity"
+	pdxmesh = "fe_national_station_small_mesh"
+	
+	locator = { name = "part1" 			position = { 0 0 0 } }
+
+	scale = 1.0
+		
+}
+
+entity = {
+	name = "fe_national_research_station_section_entity"
+	pdxmesh = "fe_national_station_small_mesh"
+}	
+
+entity = {
+	name = "fe_national_mining_station_section_entity"
+	pdxmesh = "fe_national_station_small_mesh"
 }

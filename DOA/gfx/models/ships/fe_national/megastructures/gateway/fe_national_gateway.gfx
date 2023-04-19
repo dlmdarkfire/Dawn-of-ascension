@@ -1,0 +1,15 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "fe_national_gateway_mesh"
+		file = "gfx/models/ships/fe_national/megastructures/gateway/fe_national_gateway.mesh"
+		
+		
+
+	}
+
+	pdxmesh = {
+		name = "fe_national_gateway_portal_mesh"
+		file = "gfx/models/ships/fe_national/megastructures/gateway/fe_national_gateway_portal.mesh"
+	}
+}

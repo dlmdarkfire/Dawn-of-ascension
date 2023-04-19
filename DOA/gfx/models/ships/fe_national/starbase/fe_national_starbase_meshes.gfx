@@ -43,8 +43,23 @@ objectTypes = {
 	}
 
 	pdxmesh = {
-		name = "ascendant_ion_cannon_mesh"
+		name = "fe_national_ion_cannon_mesh"
 		file = "gfx/models/ships/fe_national/starbase/fe_national_ion_cannon.mesh"
 		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "fe_national_station_small_mesh"
+		file = "gfx/models/ships/fe_national/starbase/fe_national_station_small.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "MeshShape"
+			index = 0
+			texture_diffuse = "ascendant_01_stations_diffuse.dds"
+			texture_normal = "ascendant_empire_stations_normal.dds"
+			texture_specular = "ascendant_empire_stations_specular.dds"
+			shader = "PdxMeshShip"
+		}
 	}
 }
